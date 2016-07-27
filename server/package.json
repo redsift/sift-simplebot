@@ -1,0 +1,11 @@
+{
+  "name": "sift-simplebot",
+  "display-name": "Sift Simplebot",
+  "description": "",
+  "author": "",
+  "version": "1.0.0",
+  "#": "Please use 'redsift npm' instead of system 'npm' ",
+  "dependencies": {
+    "request-promise": "^3.0.0"
+  }
+}

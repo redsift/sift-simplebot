@@ -1,0 +1,14 @@
+{
+  "name": "sift-simplebot",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@redsift/sift-sdk-web": "0.5.2",
+    "@redsift/redsift-bundler": "0.3.7"
+  }
+}
