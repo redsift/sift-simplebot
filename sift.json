@@ -9,10 +9,10 @@
   "icon": "https://static.redsift.io/assets/sifts/template/blueprint.svg",
   "interfaces": {
     "email": {
-      "thread" : {
+      "thread": {
         "controller": "dist/js/controller.umd-es2015.js"
       },
-      "client" : {
+      "client": {
         "controller": "dist/js/email-client-controller.umd-es2015.js"
       }
     },
@@ -21,51 +21,48 @@
     }
   },
   "dag": {
-    "inputs":{
-      "config": {
-        "bots": {
-          "slack": {
-            "clientID": "47738535073.47732460560",
-            "ambientMentionDuration": 300,
-            "permission": "personal"
-          }
-        }
-      },
-      "bots": {
-        "slack": {
-          "all": {
-            "filter": {
-              "conditions": [
-                {
-                  "type": "message:direct_mention,direct_message"
-                },
-                {
-                  "text": {
-                    "regexp": {
-                      "pattern": ".*",
-                      "flags": "i"
-                    }
+    "inputs": {
+      "slack-bot": {
+        "_config": {
+          "clientID": "47738535073.65822105094",
+          "ambientMentionDuration": 300,
+          "permission": "personal"
+        },
+        "all": {
+          "filter": {
+            "conditions": [
+              {
+                "type": "message:direct_mention,direct_message"
+              },
+              {
+                "text": {
+                  "regexp": {
+                    "pattern": ".*",
+                    "flags": "i"
                   }
                 }
-              ],
-              "operator": "AND"
-            }
+              }
+            ],
+            "operator": "AND"
           }
         }
       },
-      "emails":{
-        "gmailEmails":{
-          "filter":{
-            "conditions":[{
-              "from":{
-                "regexp": {
-                  "pattern": ".*@gmail\\.com",
-                  "flags": "i"
+      "emails": {
+        "gmailEmails": {
+          "filter": {
+            "conditions": [
+              {
+                "from": {
+                  "regexp": {
+                    "pattern": ".*@gmail\\.com",
+                    "flags": "i"
+                  }
                 }
+              },
+              {
+                "date": "between now and 1 month before now"
               }
-            },{
-              "date": "between now and 1 month before now"
-            }],
+            ],
             "wants": [
               "archive",
               "textBody",
@@ -76,7 +73,7 @@
         }
       }
     },
-    "nodes":[
+    "nodes": [
       {
         "#": "Slack bot",
         "implementation": {
@@ -90,40 +87,41 @@
         }
       },
       {
-      "#": "Parse",
-      "implementation": {
-        "javascript": "server/parse.js"
-      },
-      "input": {
+        "#": "Parse",
+        "implementation": {
+          "javascript": "server/parse.js"
+        },
+        "input": {
           "bucket": "gmailEmails"
-      },
-      "outputs": {
+        },
+        "outputs": {
           "messages": {},
           "threads": {}
-      }
-    },
-    {
-      "#": "Count",
-      "implementation": {
-        "javascript": "server/count.js"
+        }
       },
-      "input": {
+      {
+        "#": "Count",
+        "implementation": {
+          "javascript": "server/count.js"
+        },
+        "input": {
           "bucket": "messages",
           "select": "*"
-      },
-      "outputs": {
+        },
+        "outputs": {
           "count": {}
+        }
       }
-    }],
-    "stores":{
-      "messages" : {
-        "key$schema":"string"
+    ],
+    "stores": {
+      "messages": {
+        "key$schema": "string"
       }
     },
-    "outputs":{
-      "exports":{
-        "count" : {
-          "key$schema":"string"
+    "outputs": {
+      "exports": {
+        "count": {
+          "key$schema": "string"
         },
         "threads": {
           "import": "_email.tid"
