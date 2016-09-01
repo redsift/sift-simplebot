@@ -9,6 +9,7 @@
   "dependencies": {},
   "devDependencies": {
     "@redsift/sift-sdk-web": "0.5.2",
-    "@redsift/redsift-bundler": "0.3.7"
+    "@redsift/redsift-bundler": "0.3.7",
+    "gulp": "^3.9.1"
   }
 }
