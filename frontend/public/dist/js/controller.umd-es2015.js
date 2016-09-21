@@ -1687,7 +1687,13 @@ var MyController = (function (SiftController) {
   // TODO: Link to the docs
   MyController.prototype.loadView = function loadView (state) {
     console.log('sift-simplebot: loadView', state);
+
+    // FIXXME!
+    state.type = 'first-use';
+
     switch (state.type) {
+      case 'first-use':
+        return { html: 'first-use.html' };
       case 'email-thread':
         return { html: 'email-thread.html', data: { words: state.params.detail.words } };
       case 'summary':

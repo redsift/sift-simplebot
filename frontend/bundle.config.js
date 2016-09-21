@@ -3,6 +3,10 @@
  */
 var mainJS = [
   {
+    name: 'first-use', // prefix for output file
+    indexFile: './src/scripts/first-use/index.js' // the index file
+  },
+  {
     name: 'view', // prefix for output file
     indexFile: './src/scripts/view.js' // the index file
   },
