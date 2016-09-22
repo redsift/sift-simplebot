@@ -32,6 +32,8 @@ class ConnectedFirstUse extends React.Component {
     const { size } = this.props;
 
     const isMicro = size.width <= 232;
+    const isMini = size.width >= 232 && size.width <= 482;
+    const isSmall = isMicro || isMini;
 
     return (
       <Wizard currentPage={currentPage}>
@@ -79,7 +81,7 @@ class ConnectedFirstUse extends React.Component {
 
             <div className="connected__federated-buttons">
               <OAuthdIdentityCard
-                small={isMicro}
+                small={isSmall}
                 icon="-rs-icon-twitter"
                 label="Connect Twitter"
                 onConnected={this._onIdentityConnected}
@@ -89,7 +91,7 @@ class ConnectedFirstUse extends React.Component {
               />
 
               <OAuthdIdentityCard
-                small={isMicro}
+                small={isSmall}
                 icon="-rs-icon-angellist"
                 label="Connect AngelList"
                 onConnected={this._onIdentityConnected}
@@ -125,7 +127,7 @@ class ConnectedFirstUse extends React.Component {
 
               <div className="connected__federated-buttons">
                 <OAuthdIdentityCard
-                  small={isMicro}
+                  small={isSmall}
                   icon="-rs-icon-twitter"
                   label="Connect Twitter"
                   description="Improve results by connecting to Twitter."
@@ -137,7 +139,7 @@ class ConnectedFirstUse extends React.Component {
                 />
 
                 <OAuthdIdentityCard
-                  small={isMicro}
+                  small={isSmall}
                   icon="-rs-icon-angellist"
                   label="Connect AngelList"
                   description="Improve results by connecting to AngelList."
@@ -157,7 +159,7 @@ class ConnectedFirstUse extends React.Component {
               {isMicro ? (
                 <button onClick={() => this._goto(7)} className="rs-btn--green rs-btn--small">Next</button>
               ) : (
-                <button onClick={this._next} className="rs-btn--green">Next</button>
+                <button onClick={this._skip} className="rs-btn--green">Next</button>
               )}
             </div>
           </div>
@@ -175,7 +177,7 @@ class ConnectedFirstUse extends React.Component {
 
               <div className="connected__federated-buttons">
                 <OAuthdIdentityCard
-                  small={isMicro}
+                  small={isSmall}
                   icon="-rs-icon-twitter"
                   label="Connect Twitter"
                   description="Improve results by connecting to Twitter."
@@ -183,7 +185,7 @@ class ConnectedFirstUse extends React.Component {
                 />
 
                 <OAuthdIdentityCard
-                  small={isMicro}
+                  small={isSmall}
                   icon="-rs-icon-angellist"
                   label="Connect AngelList"
                   description="Improve results by connecting to AngelList."
@@ -216,7 +218,12 @@ class ConnectedFirstUse extends React.Component {
             <div className="page__content">
 
               <div className="connected__federated-buttons">
-                <img width="70%" src="https://static.redsift.io/assets/redsift-web/images/-rs-image-crx-taxi-screenshot.png" />
+              { isMini ? (
+                  <img width="50%" src="https://static.redsift.io/assets/redsift-web/images/-rs-image-crx-taxi-screenshot.png" />
+                ) : (
+                  <img width="70%" src="https://static.redsift.io/assets/redsift-web/images/-rs-image-crx-taxi-screenshot.png" />
+                )
+              }
               </div>
 
             </div>
@@ -239,7 +246,7 @@ class ConnectedFirstUse extends React.Component {
 
             <div className="page__content">
               <OAuthdIdentityCard
-                small={isMicro}
+                small={isSmall}
                 icon="-rs-icon-slack"
                 label="Connect Slack"
                 onConnected={this._onIdentityConnected}
@@ -272,7 +279,7 @@ class ConnectedFirstUse extends React.Component {
                 ) : (
                   <div className="connected__federated-buttons">
                     <OAuthdIdentityCard
-                      small={isMicro}
+                      small={isSmall}
                       icon="-rs-icon-slack"
                       identity={slackIdentity}
                     />

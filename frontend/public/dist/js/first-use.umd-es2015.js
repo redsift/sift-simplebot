@@ -21552,6 +21552,8 @@ var ConnectedFirstUse = function (_React$Component) {
 
 
       var isMicro = size.width <= 232;
+      var isMini = size.width >= 232 && size.width <= 482;
+      var isSmall = isMicro || isMini;
 
       return createElement(
         Wizard,
@@ -21645,7 +21647,7 @@ var ConnectedFirstUse = function (_React$Component) {
                 'div',
                 { className: 'connected__federated-buttons' },
                 createElement(OAuthdIdentityCard, {
-                  small: isMicro,
+                  small: isSmall,
                   icon: '-rs-icon-twitter',
                   label: 'Connect Twitter',
                   onConnected: this._onIdentityConnected,
@@ -21654,7 +21656,7 @@ var ConnectedFirstUse = function (_React$Component) {
                   oauthdUrl: OAUTHD_URL
                 }),
                 createElement(OAuthdIdentityCard, {
-                  small: isMicro,
+                  small: isSmall,
                   icon: '-rs-icon-angellist',
                   label: 'Connect AngelList',
                   onConnected: this._onIdentityConnected,
@@ -21707,7 +21709,7 @@ var ConnectedFirstUse = function (_React$Component) {
                 'div',
                 { className: 'connected__federated-buttons' },
                 createElement(OAuthdIdentityCard, {
-                  small: isMicro,
+                  small: isSmall,
                   icon: '-rs-icon-twitter',
                   label: 'Connect Twitter',
                   description: 'Improve results by connecting to Twitter.',
@@ -21718,7 +21720,7 @@ var ConnectedFirstUse = function (_React$Component) {
                   oauthdUrl: OAUTHD_URL
                 }),
                 createElement(OAuthdIdentityCard, {
-                  small: isMicro,
+                  small: isSmall,
                   icon: '-rs-icon-angellist',
                   label: 'Connect AngelList',
                   description: 'Improve results by connecting to AngelList.',
@@ -21746,7 +21748,7 @@ var ConnectedFirstUse = function (_React$Component) {
                 'Next'
               ) : createElement(
                 'button',
-                { onClick: this._next, className: 'rs-btn--green' },
+                { onClick: this._skip, className: 'rs-btn--green' },
                 'Next'
               )
             )
@@ -21775,14 +21777,14 @@ var ConnectedFirstUse = function (_React$Component) {
                 'div',
                 { className: 'connected__federated-buttons' },
                 createElement(OAuthdIdentityCard, {
-                  small: isMicro,
+                  small: isSmall,
                   icon: '-rs-icon-twitter',
                   label: 'Connect Twitter',
                   description: 'Improve results by connecting to Twitter.',
                   identity: twitterIdentity
                 }),
                 createElement(OAuthdIdentityCard, {
-                  small: isMicro,
+                  small: isSmall,
                   icon: '-rs-icon-angellist',
                   label: 'Connect AngelList',
                   description: 'Improve results by connecting to AngelList.',
@@ -21834,7 +21836,7 @@ var ConnectedFirstUse = function (_React$Component) {
               createElement(
                 'div',
                 { className: 'connected__federated-buttons' },
-                createElement('img', { width: '70%', src: 'https://static.redsift.io/assets/redsift-web/images/-rs-image-crx-taxi-screenshot.png' })
+                isMini ? createElement('img', { width: '50%', src: 'https://static.redsift.io/assets/redsift-web/images/-rs-image-crx-taxi-screenshot.png' }) : createElement('img', { width: '70%', src: 'https://static.redsift.io/assets/redsift-web/images/-rs-image-crx-taxi-screenshot.png' })
               )
             ),
             createElement(
@@ -21873,7 +21875,7 @@ var ConnectedFirstUse = function (_React$Component) {
               'div',
               { className: 'page__content' },
               createElement(OAuthdIdentityCard, {
-                small: isMicro,
+                small: isSmall,
                 icon: '-rs-icon-slack',
                 label: 'Connect Slack',
                 onConnected: this._onIdentityConnected,
@@ -21931,7 +21933,7 @@ var ConnectedFirstUse = function (_React$Component) {
                 'div',
                 { className: 'connected__federated-buttons' },
                 createElement(OAuthdIdentityCard, {
-                  small: isMicro,
+                  small: isSmall,
                   icon: '-rs-icon-slack',
                   identity: slackIdentity
                 })
