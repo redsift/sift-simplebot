@@ -3,12 +3,14 @@ import Wizard from './Wizard';
 import Page from './Page';
 import OAuthdIdentityCard from './OAuthdIdentityCard';
 
+import sizeMe from 'react-sizeme';
+
 // import './styles/index.styl';
 
 const OAUTHD_KEY = 'Qa7zbCXfaIjd8eJ1oAKY6nG3SEQ';
 const OAUTHD_URL = 'https://oauth.redsift.io'; // FIXXME: how to distinguish between staging and production?
 
-export default class ConnectedFirstUse extends React.Component {
+class ConnectedFirstUse extends React.Component {
   constructor(props) {
     super(props);
 
@@ -27,6 +29,9 @@ export default class ConnectedFirstUse extends React.Component {
 
   render() {
     const { currentPage, twitterIdentity, angellistIdentity, slackIdentity } = this.state;
+    const { size } = this.props;
+
+    const isMicro = size.width <= 232;
 
     return (
       <Wizard currentPage={currentPage}>
@@ -39,23 +44,32 @@ export default class ConnectedFirstUse extends React.Component {
               <h3>Welcome to your <strong>Connected</strong> Sift!</h3>
             </div>
 
-            <div className="page__content">
-              <p>Inbox priorization and personal assistant based on social signals</p>
+            { isMicro ? (
+              <div className="page__content">
+                <p>Attach social account to run <strong>Connected</strong> Sift</p>
+              </div>
+            ) : (
+              <div className="page__content">
+                <p>Inbox priorization and personal assistant based on social signals</p>
+                <div className="page__header-icon -rs-icon-dashboard"></div>
+              </div>
+            )}
 
-              <div className="page__header-icon -rs-icon-dashboard"></div>
-            </div>
-
-            <p className="page__description">To get started connect 1 or more social accounts.s</p>
+            <p className="page__description">To get started connect 1 or more social accounts.</p>
 
             <div className="page__buttons">
-              <button onClick={this._next} className="rs-btn--green">Next</button>
+              {isMicro ? (
+                <button onClick={this._next} className="rs-btn--green rs-btn--small">Next</button>
+              ) : (
+                <button onClick={this._next} className="rs-btn--green">Next</button>
+              )}
             </div>
           </div>
         </Page>
 
         <Page>
           <div className="page">
-            <div className="page__header-icon -rs-icon-redsift-red"></div>
+            <div className="page__header-icon -rs-icon-connected"></div>
 
             <div className="page__heading">
               <h3>Social Account Connections</h3>
@@ -65,6 +79,7 @@ export default class ConnectedFirstUse extends React.Component {
 
             <div className="connected__federated-buttons">
               <OAuthdIdentityCard
+                small={isMicro}
                 icon="-rs-icon-twitter"
                 label="Connect Twitter"
                 onConnected={this._onIdentityConnected}
@@ -74,6 +89,7 @@ export default class ConnectedFirstUse extends React.Component {
               />
 
               <OAuthdIdentityCard
+                small={isMicro}
                 icon="-rs-icon-angellist"
                 label="Connect AngelList"
                 onConnected={this._onIdentityConnected}
@@ -88,14 +104,18 @@ export default class ConnectedFirstUse extends React.Component {
             <p className="page__description">To get started connect 1 or more social accounts.</p>
 
             <div className="page__buttons">
-              <button onClick={this._next} className="rs-btn--green" disabled>Next</button>
+              { isMicro ? (
+                <button className="rs-btn--green rs-btn--small" disabled>Next</button>
+              ) : (
+                <button className="rs-btn--green" disabled>Next</button>
+              )}
             </div>
           </div>
         </Page>
 
         <Page>
           <div className="page">
-            <div className="page__header-icon -rs-icon-redsift-red"></div>
+            <div className="page__header-icon -rs-icon-connected"></div>
 
             <div className="page__heading">
               <h3>Social Account Connections</h3>
@@ -105,6 +125,7 @@ export default class ConnectedFirstUse extends React.Component {
 
               <div className="connected__federated-buttons">
                 <OAuthdIdentityCard
+                  small={isMicro}
                   icon="-rs-icon-twitter"
                   label="Connect Twitter"
                   description="Improve results by connecting to Twitter."
@@ -116,6 +137,7 @@ export default class ConnectedFirstUse extends React.Component {
                 />
 
                 <OAuthdIdentityCard
+                  small={isMicro}
                   icon="-rs-icon-angellist"
                   label="Connect AngelList"
                   description="Improve results by connecting to AngelList."
@@ -132,14 +154,18 @@ export default class ConnectedFirstUse extends React.Component {
             <p className="page__description">Optionally connect another social account to prioritize your inbox.</p>
 
             <div className="page__buttons">
-              <button onClick={this._skip} className="rs-btn--green">Next</button>
+              {isMicro ? (
+                <button onClick={() => this._goto(7)} className="rs-btn--green rs-btn--small">Next</button>
+              ) : (
+                <button onClick={this._next} className="rs-btn--green">Next</button>
+              )}
             </div>
           </div>
         </Page>
 
         <Page>
           <div className="page">
-            <div className="page__header-icon -rs-icon-redsift-red"></div>
+            <div className="page__header-icon -rs-icon-connected"></div>
 
             <div className="page__heading">
               <h3>Social Account Connections</h3>
@@ -149,6 +175,7 @@ export default class ConnectedFirstUse extends React.Component {
 
               <div className="connected__federated-buttons">
                 <OAuthdIdentityCard
+                  small={isMicro}
                   icon="-rs-icon-twitter"
                   label="Connect Twitter"
                   description="Improve results by connecting to Twitter."
@@ -156,6 +183,7 @@ export default class ConnectedFirstUse extends React.Component {
                 />
 
                 <OAuthdIdentityCard
+                  small={isMicro}
                   icon="-rs-icon-angellist"
                   label="Connect AngelList"
                   description="Improve results by connecting to AngelList."
@@ -168,14 +196,18 @@ export default class ConnectedFirstUse extends React.Component {
             <p className="page__description">Super! Your Twitter and AngelList accounts are now linked!</p>
 
             <div className="page__buttons">
-              <button onClick={this._next} className="rs-btn--green">Next</button>
+              {isMicro ? (
+                <button onClick={() => this._goto(7)} className="rs-btn--green rs-btn--small">Next</button>
+              ) : (
+                <button onClick={this._next} className="rs-btn--green">Next</button>
+              )}
             </div>
           </div>
         </Page>
 
         <Page>
           <div className="page">
-            <div className="page__header-icon -rs-icon-redsift-red"></div>
+            <div className="page__header-icon -rs-icon-connected"></div>
 
             <div className="page__heading">
               <h3>Here is how it looks</h3>
@@ -207,6 +239,7 @@ export default class ConnectedFirstUse extends React.Component {
 
             <div className="page__content">
               <OAuthdIdentityCard
+                small={isMicro}
                 icon="-rs-icon-slack"
                 label="Connect Slack"
                 onConnected={this._onIdentityConnected}
@@ -226,23 +259,29 @@ export default class ConnectedFirstUse extends React.Component {
 
         <Page>
           <div className="page">
-            <div className="page__header-icon -rs-icon-redsift-red"></div>
+            <div className="page__header-icon -rs-icon-connected"></div>
 
             <div className="page__heading">
               <h3>You're ready to roll</h3>
             </div>
 
             <div className="page__content">
-              {(slackIdentity) ? (
-                <div className="connected__federated-buttons">
-                  <OAuthdIdentityCard
-                    icon="-rs-icon-slack"
-                    identity={slackIdentity}
-                  />
-                </div>
-              ) : (
-                <div className="page__header-icon -rs-icon-redsift-red"></div>
-              )}
+              {(slackIdentity) ?
+                isMicro ? (
+                  <p>Great! You're all setup and ready to run <strong>Connected</strong> Sift.</p>
+                ) : (
+                  <div className="connected__federated-buttons">
+                    <OAuthdIdentityCard
+                      small={isMicro}
+                      icon="-rs-icon-slack"
+                      identity={slackIdentity}
+                    />
+                  </div>
+                ) : isMicro ? (
+                  <p>Great! You're ready to run <strong>Connected</strong> Sift.</p>
+                ) : (
+                  <div className="page__header-icon -rs-icon-redsift-red"></div>
+                )}
             </div>
 
             {(slackIdentity) ? (
@@ -252,7 +291,11 @@ export default class ConnectedFirstUse extends React.Component {
             )}
 
             <div className="page__buttons">
-              <button onClick={this._run} className="rs-btn--green">Run</button>
+              {isMicro ? (
+                <button onClick={this._run} className="rs-btn--green rs-btn--small">Run</button>
+              ) : (
+                <button onClick={this._run} className="rs-btn--green">Run</button>
+              )}
             </div>
           </div>
         </Page>
@@ -271,6 +314,11 @@ export default class ConnectedFirstUse extends React.Component {
     this.setState({ currentPage });
   }
 
+  _goto(numPage) {
+    const currentPage = numPage;
+    this.setState({ currentPage });
+  }
+
   _run() {
     alert('RUNNING SIFT!');
   }
@@ -282,3 +330,5 @@ export default class ConnectedFirstUse extends React.Component {
     this._next();
   }
 }
+
+export default sizeMe()(ConnectedFirstUse);

@@ -4,6 +4,8 @@
 	(factory((global.firstuse = global.firstuse || {})));
 }(this, (function (exports) { 'use strict';
 
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {}
+
 function interopDefault(ex) {
 	return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
 }
@@ -202,7 +204,7 @@ var invariant = createCommonjsModule(function (module) {
 
 var invariant$1 = interopDefault(invariant);
 
-var require$$1 = Object.freeze({
+var require$$1$1 = Object.freeze({
   default: invariant$1
 });
 
@@ -222,7 +224,7 @@ var PooledClass = createCommonjsModule(function (module) {
 
   var _prodInvariant = interopDefault(require$$6);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Static poolers. Several custom versions for each potential number of
@@ -882,7 +884,7 @@ var getIteratorFn = createCommonjsModule(function (module) {
 
 var getIteratorFn$1 = interopDefault(getIteratorFn);
 
-var require$$1$1 = Object.freeze({
+var require$$1$2 = Object.freeze({
   default: getIteratorFn$1
 });
 
@@ -973,8 +975,8 @@ var traverseAllChildren = createCommonjsModule(function (module) {
   var ReactCurrentOwner = interopDefault(require$$5$1);
   var ReactElement = interopDefault(require$$13);
 
-  var getIteratorFn = interopDefault(require$$1$1);
-  var invariant = interopDefault(require$$1);
+  var getIteratorFn = interopDefault(require$$1$2);
+  var invariant = interopDefault(require$$1$1);
   var KeyEscapeUtils = interopDefault(require$$3$2);
   var warning = interopDefault(require$$0$1);
 
@@ -1458,7 +1460,7 @@ var ReactComponent = createCommonjsModule(function (module) {
 
   var canDefineProperty = interopDefault(require$$2);
   var emptyObject = interopDefault(require$$5$3);
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   /**
@@ -1612,7 +1614,7 @@ var keyMirror = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Constructs an enumeration with keys equal to their value.
@@ -1780,7 +1782,7 @@ var ReactClass = createCommonjsModule(function (module) {
   var ReactNoopUpdateQueue = interopDefault(require$$5$2);
 
   var emptyObject = interopDefault(require$$5$3);
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var keyMirror = interopDefault(require$$0$2);
   var keyOf = interopDefault(require$$0$3);
   var warning = interopDefault(require$$0$1);
@@ -2451,7 +2453,7 @@ var ReactComponentTreeHook = createCommonjsModule(function (module) {
 
   var ReactCurrentOwner = interopDefault(require$$5$1);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   function isNative(fn) {
@@ -2781,7 +2783,7 @@ var ReactComponentTreeHook$1 = interopDefault(ReactComponentTreeHook);
 
 
 
-var require$$1$2 = Object.freeze({
+var require$$1$3 = Object.freeze({
   default: ReactComponentTreeHook$1
 });
 
@@ -2829,7 +2831,7 @@ var checkReactTypeSpec = createCommonjsModule(function (module) {
   var ReactPropTypeLocationNames = interopDefault(require$$4$1);
   var ReactPropTypesSecret = interopDefault(require$$2$2);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   var ReactComponentTreeHook;
@@ -2840,7 +2842,7 @@ var checkReactTypeSpec = createCommonjsModule(function (module) {
     // https://github.com/facebook/react/issues/7240
     // Remove the inline requires when we don't need them anymore:
     // https://github.com/facebook/react/pull/7178
-    ReactComponentTreeHook = interopDefault(require$$1$2);
+    ReactComponentTreeHook = interopDefault(require$$1$3);
   }
 
   var loggedTypeFailures = {};
@@ -2921,14 +2923,14 @@ var ReactElementValidator = createCommonjsModule(function (module) {
   'use strict';
 
   var ReactCurrentOwner = interopDefault(require$$5$1);
-  var ReactComponentTreeHook = interopDefault(require$$1$2);
+  var ReactComponentTreeHook = interopDefault(require$$1$3);
   var ReactElement = interopDefault(require$$13);
   var ReactPropTypeLocations = interopDefault(require$$7$1);
 
   var checkReactTypeSpec = interopDefault(require$$5$4);
 
   var canDefineProperty = interopDefault(require$$2);
-  var getIteratorFn = interopDefault(require$$1$1);
+  var getIteratorFn = interopDefault(require$$1$2);
   var warning = interopDefault(require$$0$1);
 
   function getDeclarationErrorAddendum() {
@@ -3314,7 +3316,7 @@ var ReactPropTypes = createCommonjsModule(function (module) {
   var ReactPropTypesSecret = interopDefault(require$$2$2);
 
   var emptyFunction = interopDefault(require$$3$1);
-  var getIteratorFn = interopDefault(require$$1$1);
+  var getIteratorFn = interopDefault(require$$1$2);
   var warning = interopDefault(require$$0$1);
 
   /**
@@ -3767,7 +3769,7 @@ var onlyChild = createCommonjsModule(function (module) {
 
   var ReactElement = interopDefault(require$$13);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Returns the first child in a collection of children and verifies that there
@@ -3895,6 +3897,14 @@ var Children = react.Children;
 var createElement = react.createElement;
 var PropTypes = react.PropTypes;
 
+var require$$1 = Object.freeze({
+  default: React,
+  Component: Component,
+  Children: Children,
+  createElement: createElement,
+  PropTypes: PropTypes
+});
+
 var DOMProperty = createCommonjsModule(function (module) {
   /**
    * Copyright 2013-present, Facebook, Inc.
@@ -3911,7 +3921,7 @@ var DOMProperty = createCommonjsModule(function (module) {
 
   var _prodInvariant = interopDefault(require$$6);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   function checkMask(value, bitmask) {
     return (value & bitmask) === bitmask;
@@ -4152,7 +4162,7 @@ var ReactDOMComponentTree = createCommonjsModule(function (module) {
   var DOMProperty = interopDefault(require$$3$3);
   var ReactDOMComponentFlags = interopDefault(require$$16);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
   var Flags = ReactDOMComponentFlags;
@@ -4452,7 +4462,7 @@ var EventPluginRegistry = createCommonjsModule(function (module) {
 
   var _prodInvariant = interopDefault(require$$6);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Injectable ordering of event plugins.
@@ -4765,7 +4775,7 @@ var EventPluginUtils = createCommonjsModule(function (module) {
   var EventConstants = interopDefault(require$$18);
   var ReactErrorUtils = interopDefault(require$$11);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   /**
@@ -4978,7 +4988,7 @@ var accumulateInto = createCommonjsModule(function (module) {
 
   var _prodInvariant = interopDefault(require$$6);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Accumulates items that must not be null or undefined into the first one. This
@@ -5064,7 +5074,7 @@ var forEachAccumulated = createCommonjsModule(function (module) {
 
 var forEachAccumulated$1 = interopDefault(forEachAccumulated);
 
-var require$$1$3 = Object.freeze({
+var require$$1$4 = Object.freeze({
   default: forEachAccumulated$1
 });
 
@@ -5089,8 +5099,8 @@ var EventPluginHub = createCommonjsModule(function (module) {
   var ReactErrorUtils = interopDefault(require$$11);
 
   var accumulateInto = interopDefault(require$$2$5);
-  var forEachAccumulated = interopDefault(require$$1$3);
-  var invariant = interopDefault(require$$1);
+  var forEachAccumulated = interopDefault(require$$1$4);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Internal store for event listeners
@@ -5349,7 +5359,7 @@ var EventPropagators = createCommonjsModule(function (module) {
   var EventPluginUtils = interopDefault(require$$6$2);
 
   var accumulateInto = interopDefault(require$$2$5);
-  var forEachAccumulated = interopDefault(require$$1$3);
+  var forEachAccumulated = interopDefault(require$$1$4);
   var warning = interopDefault(require$$0$1);
 
   var PropagationPhases = EventConstants.PropagationPhases;
@@ -5556,7 +5566,7 @@ var getTextContentAccessor = createCommonjsModule(function (module) {
 
 var getTextContentAccessor$1 = interopDefault(getTextContentAccessor);
 
-var require$$0$5 = Object.freeze({
+var require$$0$6 = Object.freeze({
   default: getTextContentAccessor$1
 });
 
@@ -5578,7 +5588,7 @@ var FallbackCompositionState = createCommonjsModule(function (module) {
 
   var PooledClass = interopDefault(require$$5);
 
-  var getTextContentAccessor = interopDefault(require$$0$5);
+  var getTextContentAccessor = interopDefault(require$$0$6);
 
   /**
    * This helper class stores information about text content of a target node,
@@ -5902,7 +5912,7 @@ var SyntheticEvent = createCommonjsModule(function (module) {
 
 var SyntheticEvent$1 = interopDefault(SyntheticEvent);
 
-var require$$0$6 = Object.freeze({
+var require$$0$7 = Object.freeze({
   default: SyntheticEvent$1
 });
 
@@ -5920,7 +5930,7 @@ var SyntheticCompositionEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
 
   /**
    * @interface Event
@@ -5965,7 +5975,7 @@ var SyntheticInputEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
 
   /**
    * @interface Event
@@ -5993,7 +6003,7 @@ var SyntheticInputEvent = createCommonjsModule(function (module) {
 
 var SyntheticInputEvent$1 = interopDefault(SyntheticInputEvent);
 
-var require$$1$4 = Object.freeze({
+var require$$1$5 = Object.freeze({
   default: SyntheticInputEvent$1
 });
 
@@ -6016,7 +6026,7 @@ var BeforeInputEventPlugin = createCommonjsModule(function (module) {
   var ExecutionEnvironment = interopDefault(require$$7$3);
   var FallbackCompositionState = interopDefault(require$$3$4);
   var SyntheticCompositionEvent = interopDefault(require$$2$6);
-  var SyntheticInputEvent = interopDefault(require$$1$4);
+  var SyntheticInputEvent = interopDefault(require$$1$5);
 
   var keyOf = interopDefault(require$$0$3);
 
@@ -6417,7 +6427,7 @@ var CallbackQueue = createCommonjsModule(function (module) {
 
   var PooledClass = interopDefault(require$$5);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * A specialized pseudo-event module to help keep track of components waiting to
@@ -6560,7 +6570,7 @@ var ReactOwner = createCommonjsModule(function (module) {
 
   var _prodInvariant = interopDefault(require$$6);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * ReactOwners are capable of storing references to owned components.
@@ -6643,7 +6653,7 @@ var ReactOwner = createCommonjsModule(function (module) {
 
 var ReactOwner$1 = interopDefault(ReactOwner);
 
-var require$$0$7 = Object.freeze({
+var require$$0$8 = Object.freeze({
   default: ReactOwner$1
 });
 
@@ -6661,7 +6671,7 @@ var ReactRef = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var ReactOwner = interopDefault(require$$0$7);
+  var ReactOwner = interopDefault(require$$0$8);
 
   var ReactRef = {};
 
@@ -6835,7 +6845,7 @@ var ReactChildrenMutationWarningHook = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var ReactComponentTreeHook = interopDefault(require$$1$2);
+  var ReactComponentTreeHook = interopDefault(require$$1$3);
 
   var warning = interopDefault(require$$0$1);
 
@@ -6911,7 +6921,7 @@ var performance = createCommonjsModule(function (module) {
 
 var performance$1 = interopDefault(performance);
 
-var require$$0$8 = Object.freeze({
+var require$$0$9 = Object.freeze({
   default: performance$1
 });
 
@@ -6929,7 +6939,7 @@ var performanceNow = createCommonjsModule(function (module) {
    * @typechecks
    */
 
-  var performance = interopDefault(require$$0$8);
+  var performance = interopDefault(require$$0$9);
 
   var performanceNow;
 
@@ -6953,7 +6963,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 var performanceNow$1 = interopDefault(performanceNow);
 
-var require$$1$5 = Object.freeze({
+var require$$1$6 = Object.freeze({
   default: performanceNow$1
 });
 
@@ -6973,11 +6983,11 @@ var ReactDebugTool = createCommonjsModule(function (module) {
 
   var ReactInvalidSetStateWarningHook = interopDefault(require$$6$5);
   var ReactHostOperationHistoryHook = interopDefault(require$$5$5);
-  var ReactComponentTreeHook = interopDefault(require$$1$2);
+  var ReactComponentTreeHook = interopDefault(require$$1$3);
   var ReactChildrenMutationWarningHook = interopDefault(require$$3$5);
   var ExecutionEnvironment = interopDefault(require$$7$3);
 
-  var performanceNow = interopDefault(require$$1$5);
+  var performanceNow = interopDefault(require$$1$6);
   var warning = interopDefault(require$$0$1);
 
   var hooks = [];
@@ -7453,7 +7463,7 @@ var Transaction = createCommonjsModule(function (module) {
 
   var _prodInvariant = interopDefault(require$$6);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * `Transaction` creates a black box that is able to wrap any method such that
@@ -7675,7 +7685,7 @@ var Transaction = createCommonjsModule(function (module) {
 
 var Transaction$1 = interopDefault(Transaction);
 
-var require$$1$6 = Object.freeze({
+var require$$1$7 = Object.freeze({
   default: Transaction$1
 });
 
@@ -7700,9 +7710,9 @@ var ReactUpdates = createCommonjsModule(function (module) {
   var PooledClass = interopDefault(require$$5);
   var ReactFeatureFlags = interopDefault(require$$12$1);
   var ReactReconciler = interopDefault(require$$8$2);
-  var Transaction = interopDefault(require$$1$6);
+  var Transaction = interopDefault(require$$1$7);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   var dirtyComponents = [];
   var updateBatchNumber = 0;
@@ -7979,7 +7989,7 @@ var getEventTarget = createCommonjsModule(function (module) {
 
 var getEventTarget$1 = interopDefault(getEventTarget);
 
-var require$$1$7 = Object.freeze({
+var require$$1$8 = Object.freeze({
   default: getEventTarget$1
 });
 
@@ -8048,7 +8058,7 @@ var isEventSupported = createCommonjsModule(function (module) {
 
 var isEventSupported$1 = interopDefault(isEventSupported);
 
-var require$$0$9 = Object.freeze({
+var require$$0$10 = Object.freeze({
   default: isEventSupported$1
 });
 
@@ -8132,10 +8142,10 @@ var ChangeEventPlugin = createCommonjsModule(function (module) {
   var ExecutionEnvironment = interopDefault(require$$7$3);
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactUpdates = interopDefault(require$$6$3);
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
 
-  var getEventTarget = interopDefault(require$$1$7);
-  var isEventSupported = interopDefault(require$$0$9);
+  var getEventTarget = interopDefault(require$$1$8);
+  var isEventSupported = interopDefault(require$$0$10);
   var isTextInputElement = interopDefault(require$$2$8);
   var keyOf = interopDefault(require$$0$3);
 
@@ -8496,9 +8506,9 @@ var SyntheticUIEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
 
-  var getEventTarget = interopDefault(require$$1$7);
+  var getEventTarget = interopDefault(require$$1$8);
 
   /**
    * @interface UIEvent
@@ -8546,7 +8556,7 @@ var SyntheticUIEvent = createCommonjsModule(function (module) {
 
 var SyntheticUIEvent$1 = interopDefault(SyntheticUIEvent);
 
-var require$$1$8 = Object.freeze({
+var require$$1$9 = Object.freeze({
   default: SyntheticUIEvent$1
 });
 
@@ -8634,7 +8644,7 @@ var getEventModifierState = createCommonjsModule(function (module) {
 
 var getEventModifierState$1 = interopDefault(getEventModifierState);
 
-var require$$0$11 = Object.freeze({
+var require$$0$12 = Object.freeze({
   default: getEventModifierState$1
 });
 
@@ -8652,10 +8662,10 @@ var SyntheticMouseEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticUIEvent = interopDefault(require$$1$8);
+  var SyntheticUIEvent = interopDefault(require$$1$9);
   var ViewportMetrics = interopDefault(require$$2$9);
 
-  var getEventModifierState = interopDefault(require$$0$11);
+  var getEventModifierState = interopDefault(require$$0$12);
 
   /**
    * @interface MouseEvent
@@ -8715,7 +8725,7 @@ var SyntheticMouseEvent = createCommonjsModule(function (module) {
 
 var SyntheticMouseEvent$1 = interopDefault(SyntheticMouseEvent);
 
-var require$$0$10 = Object.freeze({
+var require$$0$11 = Object.freeze({
   default: SyntheticMouseEvent$1
 });
 
@@ -8736,7 +8746,7 @@ var EnterLeaveEventPlugin = createCommonjsModule(function (module) {
   var EventConstants = interopDefault(require$$18);
   var EventPropagators = interopDefault(require$$16$1);
   var ReactDOMComponentTree = interopDefault(require$$4$3);
-  var SyntheticMouseEvent = interopDefault(require$$0$10);
+  var SyntheticMouseEvent = interopDefault(require$$0$11);
 
   var keyOf = interopDefault(require$$0$3);
 
@@ -9120,7 +9130,7 @@ var createMicrosoftUnsafeLocalFunction = createCommonjsModule(function (module) 
 
 var createMicrosoftUnsafeLocalFunction$1 = interopDefault(createMicrosoftUnsafeLocalFunction);
 
-var require$$0$12 = Object.freeze({
+var require$$0$13 = Object.freeze({
   default: createMicrosoftUnsafeLocalFunction$1
 });
 
@@ -9144,7 +9154,7 @@ var setInnerHTML = createCommonjsModule(function (module) {
   var WHITESPACE_TEST = /^[ \r\n\t\f]/;
   var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
 
-  var createMicrosoftUnsafeLocalFunction = interopDefault(require$$0$12);
+  var createMicrosoftUnsafeLocalFunction = interopDefault(require$$0$13);
 
   // SVG temp container for IE lacking innerHTML
   var reusableSVGContainer;
@@ -9416,7 +9426,7 @@ var setTextContent = createCommonjsModule(function (module) {
 
 var setTextContent$1 = interopDefault(setTextContent);
 
-var require$$0$13 = Object.freeze({
+var require$$0$14 = Object.freeze({
   default: setTextContent$1
 });
 
@@ -9437,8 +9447,8 @@ var DOMLazyTree = createCommonjsModule(function (module) {
   var DOMNamespaces = interopDefault(require$$24);
   var setInnerHTML = interopDefault(require$$2$10);
 
-  var createMicrosoftUnsafeLocalFunction = interopDefault(require$$0$12);
-  var setTextContent = interopDefault(require$$0$13);
+  var createMicrosoftUnsafeLocalFunction = interopDefault(require$$0$13);
+  var setTextContent = interopDefault(require$$0$14);
 
   var ELEMENT_NODE_TYPE = 1;
   var DOCUMENT_FRAGMENT_NODE_TYPE = 11;
@@ -9561,7 +9571,7 @@ var createArrayFromMixed = createCommonjsModule(function (module) {
    * @typechecks
    */
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Convert array-like objects to arrays.
@@ -9701,7 +9711,7 @@ var getMarkupWrap = createCommonjsModule(function (module) {
 
   var ExecutionEnvironment = interopDefault(require$$7$3);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Dummy container used to detect which wraps are necessary.
@@ -9783,7 +9793,7 @@ var getMarkupWrap = createCommonjsModule(function (module) {
 
 var getMarkupWrap$1 = interopDefault(getMarkupWrap);
 
-var require$$1$9 = Object.freeze({
+var require$$1$10 = Object.freeze({
   default: getMarkupWrap$1
 });
 
@@ -9806,8 +9816,8 @@ var createNodesFromMarkup = createCommonjsModule(function (module) {
   var ExecutionEnvironment = interopDefault(require$$7$3);
 
   var createArrayFromMixed = interopDefault(require$$2$13);
-  var getMarkupWrap = interopDefault(require$$1$9);
-  var invariant = interopDefault(require$$1);
+  var getMarkupWrap = interopDefault(require$$1$10);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Dummy container used to render all markup.
@@ -9900,7 +9910,7 @@ var Danger = createCommonjsModule(function (module) {
 
   var createNodesFromMarkup = interopDefault(require$$2$12);
   var emptyFunction = interopDefault(require$$3$1);
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   var Danger = {
 
@@ -9997,9 +10007,9 @@ var DOMChildrenOperations = createCommonjsModule(function (module) {
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactInstrumentation = interopDefault(require$$10);
 
-  var createMicrosoftUnsafeLocalFunction = interopDefault(require$$0$12);
+  var createMicrosoftUnsafeLocalFunction = interopDefault(require$$0$13);
   var setInnerHTML = interopDefault(require$$2$10);
-  var setTextContent = interopDefault(require$$0$13);
+  var setTextContent = interopDefault(require$$0$14);
 
   function getNodeAfter(parentNode, node) {
     // Special case for text components, which return [open, close] comments
@@ -10193,7 +10203,7 @@ var ReactDOMIDOperations = createCommonjsModule(function (module) {
 
 var ReactDOMIDOperations$1 = interopDefault(ReactDOMIDOperations);
 
-var require$$0$14 = Object.freeze({
+var require$$0$15 = Object.freeze({
   default: ReactDOMIDOperations$1
 });
 
@@ -10212,7 +10222,7 @@ var ReactComponentBrowserEnvironment = createCommonjsModule(function (module) {
   'use strict';
 
   var DOMChildrenOperations = interopDefault(require$$5$6);
-  var ReactDOMIDOperations = interopDefault(require$$0$14);
+  var ReactDOMIDOperations = interopDefault(require$$0$15);
 
   /**
    * Abstracts away all functionality of the reconciler that requires knowledge of
@@ -10267,7 +10277,7 @@ var focusNode = createCommonjsModule(function (module) {
 
 var focusNode$1 = interopDefault(focusNode);
 
-var require$$1$10 = Object.freeze({
+var require$$1$11 = Object.freeze({
   default: focusNode$1
 });
 
@@ -10287,7 +10297,7 @@ var AutoFocusUtils = createCommonjsModule(function (module) {
 
   var ReactDOMComponentTree = interopDefault(require$$4$3);
 
-  var focusNode = interopDefault(require$$1$10);
+  var focusNode = interopDefault(require$$1$11);
 
   var AutoFocusUtils = {
     focusDOMComponent: function focusDOMComponent() {
@@ -10457,7 +10467,7 @@ var CSSProperty = createCommonjsModule(function (module) {
 
 var CSSProperty$1 = interopDefault(CSSProperty);
 
-var require$$1$11 = Object.freeze({
+var require$$1$12 = Object.freeze({
   default: CSSProperty$1
 });
 
@@ -10497,7 +10507,7 @@ var camelize = createCommonjsModule(function (module) {
 
 var camelize$1 = interopDefault(camelize);
 
-var require$$0$15 = Object.freeze({
+var require$$0$16 = Object.freeze({
   default: camelize$1
 });
 
@@ -10515,7 +10525,7 @@ var camelizeStyleName = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var camelize = interopDefault(require$$0$15);
+  var camelize = interopDefault(require$$0$16);
 
   var msPattern = /^-ms-/;
 
@@ -10563,7 +10573,7 @@ var dangerousStyleValue = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var CSSProperty = interopDefault(require$$1$11);
+  var CSSProperty = interopDefault(require$$1$12);
   var warning = interopDefault(require$$0$1);
 
   var isUnitlessNumber = CSSProperty.isUnitlessNumber;
@@ -10653,7 +10663,7 @@ var hyphenate = createCommonjsModule(function (module) {
 
 var hyphenate$1 = interopDefault(hyphenate);
 
-var require$$0$16 = Object.freeze({
+var require$$0$17 = Object.freeze({
   default: hyphenate$1
 });
 
@@ -10671,7 +10681,7 @@ var hyphenateStyleName = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var hyphenate = interopDefault(require$$0$16);
+  var hyphenate = interopDefault(require$$0$17);
 
   var msPattern = /^ms-/;
 
@@ -10738,7 +10748,7 @@ var memoizeStringOnly = createCommonjsModule(function (module) {
 
 var memoizeStringOnly$1 = interopDefault(memoizeStringOnly);
 
-var require$$1$12 = Object.freeze({
+var require$$1$13 = Object.freeze({
   default: memoizeStringOnly$1
 });
 
@@ -10756,14 +10766,14 @@ var CSSPropertyOperations = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var CSSProperty = interopDefault(require$$1$11);
+  var CSSProperty = interopDefault(require$$1$12);
   var ExecutionEnvironment = interopDefault(require$$7$3);
   var ReactInstrumentation = interopDefault(require$$10);
 
   var camelizeStyleName = interopDefault(require$$4$4);
   var dangerousStyleValue = interopDefault(require$$3$6);
   var hyphenateStyleName = interopDefault(require$$2$14);
-  var memoizeStringOnly = interopDefault(require$$1$12);
+  var memoizeStringOnly = interopDefault(require$$1$13);
   var warning = interopDefault(require$$0$1);
 
   var processStyleName = memoizeStringOnly(function (styleName) {
@@ -10902,7 +10912,7 @@ var quoteAttributeValueForBrowser = createCommonjsModule(function (module) {
 
 var quoteAttributeValueForBrowser$1 = interopDefault(quoteAttributeValueForBrowser);
 
-var require$$1$13 = Object.freeze({
+var require$$1$14 = Object.freeze({
   default: quoteAttributeValueForBrowser$1
 });
 
@@ -10924,7 +10934,7 @@ var DOMPropertyOperations = createCommonjsModule(function (module) {
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactInstrumentation = interopDefault(require$$10);
 
-  var quoteAttributeValueForBrowser = interopDefault(require$$1$13);
+  var quoteAttributeValueForBrowser = interopDefault(require$$1$14);
   var warning = interopDefault(require$$0$1);
 
   var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -11272,7 +11282,7 @@ var getVendorPrefixedEventName = createCommonjsModule(function (module) {
 
 var getVendorPrefixedEventName$1 = interopDefault(getVendorPrefixedEventName);
 
-var require$$1$14 = Object.freeze({
+var require$$1$15 = Object.freeze({
   default: getVendorPrefixedEventName$1
 });
 
@@ -11297,8 +11307,8 @@ var ReactBrowserEventEmitter = createCommonjsModule(function (module) {
   var ReactEventEmitterMixin = interopDefault(require$$3$7);
   var ViewportMetrics = interopDefault(require$$2$9);
 
-  var getVendorPrefixedEventName = interopDefault(require$$1$14);
-  var isEventSupported = interopDefault(require$$0$9);
+  var getVendorPrefixedEventName = interopDefault(require$$1$15);
+  var isEventSupported = interopDefault(require$$0$10);
 
   /**
    * Summary of `ReactBrowserEventEmitter` event handling:
@@ -11727,7 +11737,7 @@ var LinkedValueUtils = createCommonjsModule(function (module) {
   var ReactPropTypeLocations = interopDefault(require$$7$1);
   var ReactPropTypesSecret = interopDefault(require$$2$2);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   var hasReadOnlyValue = {
@@ -11875,7 +11885,7 @@ var ReactDOMInput = createCommonjsModule(function (module) {
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactUpdates = interopDefault(require$$6$3);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   var didWarnValueLink = false;
@@ -12299,7 +12309,7 @@ var ReactDOMSelect = createCommonjsModule(function (module) {
 
 var ReactDOMSelect$1 = interopDefault(ReactDOMSelect);
 
-var require$$1$15 = Object.freeze({
+var require$$1$16 = Object.freeze({
   default: ReactDOMSelect$1
 });
 
@@ -12321,7 +12331,7 @@ var ReactDOMOption = createCommonjsModule(function (module) {
 
   var ReactChildren = interopDefault(require$$3);
   var ReactDOMComponentTree = interopDefault(require$$4$3);
-  var ReactDOMSelect = interopDefault(require$$1$15);
+  var ReactDOMSelect = interopDefault(require$$1$16);
 
   var warning = interopDefault(require$$0$1);
   var didWarnInvalidOptionChildren = false;
@@ -12455,7 +12465,7 @@ var ReactDOMTextarea = createCommonjsModule(function (module) {
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactUpdates = interopDefault(require$$6$3);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   var didWarnValueLink = false;
@@ -12601,7 +12611,7 @@ var ReactComponentEnvironment = createCommonjsModule(function (module) {
 
   var _prodInvariant = interopDefault(require$$6);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   var injected = false;
 
@@ -12715,7 +12725,7 @@ var ReactNodeTypes = createCommonjsModule(function (module) {
 
   var ReactElement = interopDefault(require$$13);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   var ReactNodeTypes = {
     HOST: 0,
@@ -12741,7 +12751,7 @@ var ReactNodeTypes = createCommonjsModule(function (module) {
 
 var ReactNodeTypes$1 = interopDefault(ReactNodeTypes);
 
-var require$$0$17 = Object.freeze({
+var require$$0$18 = Object.freeze({
   default: ReactNodeTypes$1
 });
 
@@ -12818,7 +12828,7 @@ var shallowEqual$1 = interopDefault(shallowEqual);
 
 
 
-var require$$0$18 = Object.freeze({
+var require$$0$19 = Object.freeze({
   default: shallowEqual$1
 });
 
@@ -12871,7 +12881,7 @@ var shouldUpdateReactComponent$1 = interopDefault(shouldUpdateReactComponent);
 
 
 
-var require$$1$16 = Object.freeze({
+var require$$1$17 = Object.freeze({
   default: shouldUpdateReactComponent$1
 });
 
@@ -12898,15 +12908,15 @@ var ReactCompositeComponent = createCommonjsModule(function (module) {
   var ReactErrorUtils = interopDefault(require$$11);
   var ReactInstanceMap = interopDefault(require$$3$8);
   var ReactInstrumentation = interopDefault(require$$10);
-  var ReactNodeTypes = interopDefault(require$$0$17);
+  var ReactNodeTypes = interopDefault(require$$0$18);
   var ReactPropTypeLocations = interopDefault(require$$7$1);
   var ReactReconciler = interopDefault(require$$8$2);
 
   var checkReactTypeSpec = interopDefault(require$$5$4);
   var emptyObject = interopDefault(require$$5$3);
-  var invariant = interopDefault(require$$1);
-  var shallowEqual = interopDefault(require$$0$18);
-  var shouldUpdateReactComponent = interopDefault(require$$1$16);
+  var invariant = interopDefault(require$$1$1);
+  var shallowEqual = interopDefault(require$$0$19);
+  var shouldUpdateReactComponent = interopDefault(require$$1$17);
   var warning = interopDefault(require$$0$1);
 
   var CompositeTypes = {
@@ -13730,7 +13740,7 @@ var ReactHostComponent = createCommonjsModule(function (module) {
   var _prodInvariant = interopDefault(require$$6),
       _assign = interopDefault(require$$7);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   var genericComponentClass = null;
   // This registry keeps track of wrapper classes around host tags.
@@ -13794,7 +13804,7 @@ var ReactHostComponent = createCommonjsModule(function (module) {
 
 var ReactHostComponent$1 = interopDefault(ReactHostComponent);
 
-var require$$1$17 = Object.freeze({
+var require$$1$18 = Object.freeze({
   default: ReactHostComponent$1
 });
 
@@ -13817,9 +13827,9 @@ var instantiateReactComponent = createCommonjsModule(function (module) {
 
   var ReactCompositeComponent = interopDefault(require$$4$7);
   var ReactEmptyComponent = interopDefault(require$$3$10);
-  var ReactHostComponent = interopDefault(require$$1$17);
+  var ReactHostComponent = interopDefault(require$$1$18);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   // To avoid a cyclic dependency, we create the final class in this module
@@ -13938,7 +13948,7 @@ var ReactChildReconciler = createCommonjsModule(function (module) {
 
   var instantiateReactComponent = interopDefault(require$$4$6);
   var KeyEscapeUtils = interopDefault(require$$3$2);
-  var shouldUpdateReactComponent = interopDefault(require$$1$16);
+  var shouldUpdateReactComponent = interopDefault(require$$1$17);
   var traverseAllChildren = interopDefault(require$$2$1);
   var warning = interopDefault(require$$0$1);
 
@@ -13950,7 +13960,7 @@ var ReactChildReconciler = createCommonjsModule(function (module) {
     // https://github.com/facebook/react/issues/7240
     // Remove the inline requires when we don't need them anymore:
     // https://github.com/facebook/react/pull/7178
-    ReactComponentTreeHook = interopDefault(require$$1$2);
+    ReactComponentTreeHook = interopDefault(require$$1$3);
   }
 
   function instantiateChild(childInstances, child, name, selfDebugID) {
@@ -14099,7 +14109,7 @@ var flattenChildren = createCommonjsModule(function (module) {
     // https://github.com/facebook/react/issues/7240
     // Remove the inline requires when we don't need them anymore:
     // https://github.com/facebook/react/pull/7178
-    ReactComponentTreeHook = interopDefault(require$$1$2);
+    ReactComponentTreeHook = interopDefault(require$$1$3);
   }
 
   /**
@@ -14144,7 +14154,7 @@ var flattenChildren$1 = interopDefault(flattenChildren);
 
 
 
-var require$$1$18 = Object.freeze({
+var require$$1$19 = Object.freeze({
   default: flattenChildren$1
 });
 
@@ -14174,8 +14184,8 @@ var ReactMultiChild = createCommonjsModule(function (module) {
   var ReactChildReconciler = interopDefault(require$$3$9);
 
   var emptyFunction = interopDefault(require$$3$1);
-  var flattenChildren = interopDefault(require$$1$18);
-  var invariant = interopDefault(require$$1);
+  var flattenChildren = interopDefault(require$$1$19);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Make an update for markup to be rendered and inserted at a supplied index.
@@ -14580,7 +14590,7 @@ var ReactUpdateQueue = createCommonjsModule(function (module) {
   var ReactInstrumentation = interopDefault(require$$10);
   var ReactUpdates = interopDefault(require$$6$3);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   function enqueueUpdate(internalInstance) {
@@ -14801,7 +14811,7 @@ var ReactServerUpdateQueue = createCommonjsModule(function (module) {
   }
 
   var ReactUpdateQueue = interopDefault(require$$7$4);
-  var Transaction = interopDefault(require$$1$6);
+  var Transaction = interopDefault(require$$1$7);
   var warning = interopDefault(require$$0$1);
 
   function warnNoop(publicInstance, callerName) {
@@ -14921,7 +14931,7 @@ var ReactServerUpdateQueue = createCommonjsModule(function (module) {
 
 var ReactServerUpdateQueue$1 = interopDefault(ReactServerUpdateQueue);
 
-var require$$0$19 = Object.freeze({
+var require$$0$20 = Object.freeze({
   default: ReactServerUpdateQueue$1
 });
 
@@ -14942,9 +14952,9 @@ var ReactServerRenderingTransaction = createCommonjsModule(function (module) {
   var _assign = interopDefault(require$$7);
 
   var PooledClass = interopDefault(require$$5);
-  var Transaction = interopDefault(require$$1$6);
+  var Transaction = interopDefault(require$$1$7);
   var ReactInstrumentation = interopDefault(require$$10);
-  var ReactServerUpdateQueue = interopDefault(require$$0$19);
+  var ReactServerUpdateQueue = interopDefault(require$$0$20);
 
   /**
    * Executed within the scope of the `Transaction` instance. Consider these as
@@ -15047,7 +15057,7 @@ var validateDOMNesting = createCommonjsModule(function (module) {
 
 var validateDOMNesting$1 = interopDefault(validateDOMNesting);
 
-var require$$0$20 = Object.freeze({
+var require$$0$21 = Object.freeze({
   default: validateDOMNesting$1
 });
 
@@ -15085,7 +15095,7 @@ var ReactDOMComponent = createCommonjsModule(function (module) {
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactDOMInput = interopDefault(require$$14$1);
   var ReactDOMOption = interopDefault(require$$13$2);
-  var ReactDOMSelect = interopDefault(require$$1$15);
+  var ReactDOMSelect = interopDefault(require$$1$16);
   var ReactDOMTextarea = interopDefault(require$$11$2);
   var ReactInstrumentation = interopDefault(require$$10);
   var ReactMultiChild = interopDefault(require$$9$1);
@@ -15093,11 +15103,11 @@ var ReactDOMComponent = createCommonjsModule(function (module) {
 
   var emptyFunction = interopDefault(require$$3$1);
   var escapeTextContentForBrowser = interopDefault(require$$2$11);
-  var invariant = interopDefault(require$$1);
-  var isEventSupported = interopDefault(require$$0$9);
+  var invariant = interopDefault(require$$1$1);
+  var isEventSupported = interopDefault(require$$0$10);
   var keyOf = interopDefault(require$$0$3);
-  var shallowEqual = interopDefault(require$$0$18);
-  var validateDOMNesting = interopDefault(require$$0$20);
+  var shallowEqual = interopDefault(require$$0$19);
+  var validateDOMNesting = interopDefault(require$$0$21);
   var warning = interopDefault(require$$0$1);
 
   var Flags = ReactDOMComponentFlags;
@@ -16083,7 +16093,7 @@ var ReactDOMTreeTraversal = createCommonjsModule(function (module) {
 
   var _prodInvariant = interopDefault(require$$6);
 
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
 
   /**
    * Return the lowest common ancestor of A and B, or null if they are in
@@ -16244,8 +16254,8 @@ var ReactDOMTextComponent = createCommonjsModule(function (module) {
   var ReactDOMComponentTree = interopDefault(require$$4$3);
 
   var escapeTextContentForBrowser = interopDefault(require$$2$11);
-  var invariant = interopDefault(require$$1);
-  var validateDOMNesting = interopDefault(require$$0$20);
+  var invariant = interopDefault(require$$1$1);
+  var validateDOMNesting = interopDefault(require$$0$21);
 
   /**
    * Text nodes violate a couple assumptions that React makes about components:
@@ -16400,7 +16410,7 @@ var ReactDefaultBatchingStrategy = createCommonjsModule(function (module) {
   var _assign = interopDefault(require$$7);
 
   var ReactUpdates = interopDefault(require$$6$3);
-  var Transaction = interopDefault(require$$1$6);
+  var Transaction = interopDefault(require$$1$7);
 
   var emptyFunction = interopDefault(require$$3$1);
 
@@ -16593,7 +16603,7 @@ var getUnboundedScrollPosition = createCommonjsModule(function (module) {
 
 var getUnboundedScrollPosition$1 = interopDefault(getUnboundedScrollPosition);
 
-var require$$0$21 = Object.freeze({
+var require$$0$22 = Object.freeze({
   default: getUnboundedScrollPosition$1
 });
 
@@ -16619,8 +16629,8 @@ var ReactEventListener = createCommonjsModule(function (module) {
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactUpdates = interopDefault(require$$6$3);
 
-  var getEventTarget = interopDefault(require$$1$7);
-  var getUnboundedScrollPosition = interopDefault(require$$0$21);
+  var getEventTarget = interopDefault(require$$1$8);
+  var getUnboundedScrollPosition = interopDefault(require$$0$22);
 
   /**
    * Find the deepest React component completely containing the root of the
@@ -16784,7 +16794,7 @@ var ReactInjection = createCommonjsModule(function (module) {
   var ReactClass = interopDefault(require$$4);
   var ReactEmptyComponent = interopDefault(require$$3$10);
   var ReactBrowserEventEmitter = interopDefault(require$$18$1);
-  var ReactHostComponent = interopDefault(require$$1$17);
+  var ReactHostComponent = interopDefault(require$$1$18);
   var ReactUpdates = interopDefault(require$$6$3);
 
   var ReactInjection = {
@@ -16887,7 +16897,7 @@ var getNodeForCharacterOffset = createCommonjsModule(function (module) {
 
 var getNodeForCharacterOffset$1 = interopDefault(getNodeForCharacterOffset);
 
-var require$$1$19 = Object.freeze({
+var require$$1$20 = Object.freeze({
   default: getNodeForCharacterOffset$1
 });
 
@@ -16907,8 +16917,8 @@ var ReactDOMSelection = createCommonjsModule(function (module) {
 
   var ExecutionEnvironment = interopDefault(require$$7$3);
 
-  var getNodeForCharacterOffset = interopDefault(require$$1$19);
-  var getTextContentAccessor = interopDefault(require$$0$5);
+  var getNodeForCharacterOffset = interopDefault(require$$1$20);
+  var getTextContentAccessor = interopDefault(require$$0$6);
 
   /**
    * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -17142,7 +17152,7 @@ var isNode$1 = interopDefault(isNode);
 
 
 
-var require$$0$23 = Object.freeze({
+var require$$0$24 = Object.freeze({
   default: isNode$1
 });
 
@@ -17160,7 +17170,7 @@ var isTextNode = createCommonjsModule(function (module) {
    * @typechecks
    */
 
-  var isNode = interopDefault(require$$0$23);
+  var isNode = interopDefault(require$$0$24);
 
   /**
    * @param {*} object The object to check.
@@ -17175,7 +17185,7 @@ var isTextNode = createCommonjsModule(function (module) {
 
 var isTextNode$1 = interopDefault(isTextNode);
 
-var require$$0$22 = Object.freeze({
+var require$$0$23 = Object.freeze({
   default: isTextNode$1
 });
 
@@ -17193,7 +17203,7 @@ var containsNode = createCommonjsModule(function (module) {
    * 
    */
 
-  var isTextNode = interopDefault(require$$0$22);
+  var isTextNode = interopDefault(require$$0$23);
 
   /*eslint-disable no-bitwise */
 
@@ -17288,7 +17298,7 @@ var ReactInputSelection = createCommonjsModule(function (module) {
   var ReactDOMSelection = interopDefault(require$$3$12);
 
   var containsNode = interopDefault(require$$2$15);
-  var focusNode = interopDefault(require$$1$10);
+  var focusNode = interopDefault(require$$1$11);
   var getActiveElement = interopDefault(require$$3$13);
 
   function isInDocument(node) {
@@ -17425,7 +17435,7 @@ var ReactReconcileTransaction = createCommonjsModule(function (module) {
   var ReactBrowserEventEmitter = interopDefault(require$$18$1);
   var ReactInputSelection = interopDefault(require$$5$11);
   var ReactInstrumentation = interopDefault(require$$10);
-  var Transaction = interopDefault(require$$1$6);
+  var Transaction = interopDefault(require$$1$7);
   var ReactUpdateQueue = interopDefault(require$$7$4);
 
   /**
@@ -17916,12 +17926,12 @@ var SelectEventPlugin = createCommonjsModule(function (module) {
   var ExecutionEnvironment = interopDefault(require$$7$3);
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactInputSelection = interopDefault(require$$5$11);
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
 
   var getActiveElement = interopDefault(require$$3$13);
   var isTextInputElement = interopDefault(require$$2$8);
   var keyOf = interopDefault(require$$0$3);
-  var shallowEqual = interopDefault(require$$0$18);
+  var shallowEqual = interopDefault(require$$0$19);
 
   var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -18098,7 +18108,7 @@ var SelectEventPlugin = createCommonjsModule(function (module) {
 
 var SelectEventPlugin$1 = interopDefault(SelectEventPlugin);
 
-var require$$1$20 = Object.freeze({
+var require$$1$21 = Object.freeze({
   default: SelectEventPlugin$1
 });
 
@@ -18116,7 +18126,7 @@ var SyntheticAnimationEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
 
   /**
    * @interface Event
@@ -18164,7 +18174,7 @@ var SyntheticClipboardEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
 
   /**
    * @interface Event
@@ -18211,7 +18221,7 @@ var SyntheticFocusEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticUIEvent = interopDefault(require$$1$8);
+  var SyntheticUIEvent = interopDefault(require$$1$9);
 
   /**
    * @interface FocusEvent
@@ -18297,7 +18307,7 @@ var getEventCharCode = createCommonjsModule(function (module) {
 
 var getEventCharCode$1 = interopDefault(getEventCharCode);
 
-var require$$0$25 = Object.freeze({
+var require$$0$26 = Object.freeze({
   default: getEventCharCode$1
 });
 
@@ -18315,7 +18325,7 @@ var getEventKey = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var getEventCharCode = interopDefault(require$$0$25);
+  var getEventCharCode = interopDefault(require$$0$26);
 
   /**
    * Normalization of deprecated HTML5 `key` values
@@ -18408,7 +18418,7 @@ var getEventKey = createCommonjsModule(function (module) {
 
 var getEventKey$1 = interopDefault(getEventKey);
 
-var require$$1$21 = Object.freeze({
+var require$$1$22 = Object.freeze({
   default: getEventKey$1
 });
 
@@ -18426,11 +18436,11 @@ var SyntheticKeyboardEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticUIEvent = interopDefault(require$$1$8);
+  var SyntheticUIEvent = interopDefault(require$$1$9);
 
-  var getEventCharCode = interopDefault(require$$0$25);
-  var getEventKey = interopDefault(require$$1$21);
-  var getEventModifierState = interopDefault(require$$0$11);
+  var getEventCharCode = interopDefault(require$$0$26);
+  var getEventKey = interopDefault(require$$1$22);
+  var getEventModifierState = interopDefault(require$$0$12);
 
   /**
    * @interface KeyboardEvent
@@ -18519,7 +18529,7 @@ var SyntheticDragEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticMouseEvent = interopDefault(require$$0$10);
+  var SyntheticMouseEvent = interopDefault(require$$0$11);
 
   /**
    * @interface DragEvent
@@ -18564,9 +18574,9 @@ var SyntheticTouchEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticUIEvent = interopDefault(require$$1$8);
+  var SyntheticUIEvent = interopDefault(require$$1$9);
 
-  var getEventModifierState = interopDefault(require$$0$11);
+  var getEventModifierState = interopDefault(require$$0$12);
 
   /**
    * @interface TouchEvent
@@ -18618,7 +18628,7 @@ var SyntheticTransitionEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
 
   /**
    * @interface Event
@@ -18666,7 +18676,7 @@ var SyntheticWheelEvent = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var SyntheticMouseEvent = interopDefault(require$$0$10);
+  var SyntheticMouseEvent = interopDefault(require$$0$11);
 
   /**
    * @interface WheelEvent
@@ -18737,19 +18747,19 @@ var SimpleEventPlugin = createCommonjsModule(function (module) {
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var SyntheticAnimationEvent = interopDefault(require$$14$2);
   var SyntheticClipboardEvent = interopDefault(require$$13$3);
-  var SyntheticEvent = interopDefault(require$$0$6);
+  var SyntheticEvent = interopDefault(require$$0$7);
   var SyntheticFocusEvent = interopDefault(require$$11$3);
   var SyntheticKeyboardEvent = interopDefault(require$$10$1);
-  var SyntheticMouseEvent = interopDefault(require$$0$10);
+  var SyntheticMouseEvent = interopDefault(require$$0$11);
   var SyntheticDragEvent = interopDefault(require$$8$5);
   var SyntheticTouchEvent = interopDefault(require$$7$6);
   var SyntheticTransitionEvent = interopDefault(require$$6$9);
-  var SyntheticUIEvent = interopDefault(require$$1$8);
+  var SyntheticUIEvent = interopDefault(require$$1$9);
   var SyntheticWheelEvent = interopDefault(require$$4$9);
 
   var emptyFunction = interopDefault(require$$3$1);
-  var getEventCharCode = interopDefault(require$$0$25);
-  var invariant = interopDefault(require$$1);
+  var getEventCharCode = interopDefault(require$$0$26);
+  var invariant = interopDefault(require$$1$1);
   var keyOf = interopDefault(require$$0$3);
 
   var topLevelTypes = EventConstants.topLevelTypes;
@@ -19355,7 +19365,7 @@ var SimpleEventPlugin = createCommonjsModule(function (module) {
 
 var SimpleEventPlugin$1 = interopDefault(SimpleEventPlugin);
 
-var require$$0$24 = Object.freeze({
+var require$$0$25 = Object.freeze({
   default: SimpleEventPlugin$1
 });
 
@@ -19389,8 +19399,8 @@ var ReactDefaultInjection = createCommonjsModule(function (module) {
   var ReactInjection = interopDefault(require$$4$8);
   var ReactReconcileTransaction = interopDefault(require$$3$11);
   var SVGDOMPropertyConfig = interopDefault(require$$2$16);
-  var SelectEventPlugin = interopDefault(require$$1$20);
-  var SimpleEventPlugin = interopDefault(require$$0$24);
+  var SelectEventPlugin = interopDefault(require$$1$21);
+  var SimpleEventPlugin = interopDefault(require$$0$25);
 
   var alreadyInjected = false;
 
@@ -19468,7 +19478,7 @@ var ReactDOMContainerInfo = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var validateDOMNesting = interopDefault(require$$0$20);
+  var validateDOMNesting = interopDefault(require$$0$21);
 
   var DOC_NODE_TYPE = 9;
 
@@ -19570,7 +19580,7 @@ var adler32 = createCommonjsModule(function (module) {
 
 var adler32$1 = interopDefault(adler32);
 
-var require$$0$27 = Object.freeze({
+var require$$0$28 = Object.freeze({
   default: adler32$1
 });
 
@@ -19588,7 +19598,7 @@ var ReactMarkupChecksum = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var adler32 = interopDefault(require$$0$27);
+  var adler32 = interopDefault(require$$0$28);
 
   var TAG_END = /\/?>/;
   var COMMENT_START = /^<\!\-\-/;
@@ -19667,9 +19677,9 @@ var ReactMount = createCommonjsModule(function (module) {
 
   var emptyObject = interopDefault(require$$5$3);
   var instantiateReactComponent = interopDefault(require$$4$6);
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var setInnerHTML = interopDefault(require$$2$10);
-  var shouldUpdateReactComponent = interopDefault(require$$1$16);
+  var shouldUpdateReactComponent = interopDefault(require$$1$17);
   var warning = interopDefault(require$$0$1);
 
   var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
@@ -20123,7 +20133,7 @@ var ReactMount = createCommonjsModule(function (module) {
 
 var ReactMount$1 = interopDefault(ReactMount);
 
-var require$$0$26 = Object.freeze({
+var require$$0$27 = Object.freeze({
   default: ReactMount$1
 });
 
@@ -20141,7 +20151,7 @@ var getHostComponentFromComposite = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var ReactNodeTypes = interopDefault(require$$0$17);
+  var ReactNodeTypes = interopDefault(require$$0$18);
 
   function getHostComponentFromComposite(inst) {
     var type;
@@ -20187,7 +20197,7 @@ var findDOMNode = createCommonjsModule(function (module) {
   var ReactInstanceMap = interopDefault(require$$3$8);
 
   var getHostComponentFromComposite = interopDefault(require$$2$17);
-  var invariant = interopDefault(require$$1);
+  var invariant = interopDefault(require$$1$1);
   var warning = interopDefault(require$$0$1);
 
   /**
@@ -20243,7 +20253,7 @@ var renderSubtreeIntoContainer = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var ReactMount = interopDefault(require$$0$26);
+  var ReactMount = interopDefault(require$$0$27);
 
   module.exports = ReactMount.renderSubtreeIntoContainer;
 });
@@ -20270,7 +20280,7 @@ var ReactDOMUnknownPropertyHook = createCommonjsModule(function (module) {
 
   var DOMProperty = interopDefault(require$$3$3);
   var EventPluginRegistry = interopDefault(require$$2$4);
-  var ReactComponentTreeHook = interopDefault(require$$1$2);
+  var ReactComponentTreeHook = interopDefault(require$$1$3);
 
   var warning = interopDefault(require$$0$1);
 
@@ -20334,7 +20344,7 @@ var ReactDOMNullInputValuePropHook = createCommonjsModule(function (module) {
 
   'use strict';
 
-  var ReactComponentTreeHook = interopDefault(require$$1$2);
+  var ReactComponentTreeHook = interopDefault(require$$1$3);
 
   var warning = interopDefault(require$$0$1);
 
@@ -20386,7 +20396,7 @@ var ReactDOM$1 = createCommonjsModule(function (module) {
 
   var ReactDOMComponentTree = interopDefault(require$$4$3);
   var ReactDefaultInjection = interopDefault(require$$12);
-  var ReactMount = interopDefault(require$$0$26);
+  var ReactMount = interopDefault(require$$0$27);
   var ReactReconciler = interopDefault(require$$8$2);
   var ReactUpdates = interopDefault(require$$6$3);
   var ReactVersion = interopDefault(require$$8$1);
@@ -20442,17 +20452,23 @@ var ReactDOM$1 = createCommonjsModule(function (module) {
 
 var ReactDOM$2 = interopDefault(ReactDOM$1);
 
-var require$$0$4 = Object.freeze({
+var require$$0$5 = Object.freeze({
   default: ReactDOM$2
 });
 
 var index$2 = createCommonjsModule(function (module) {
   'use strict';
 
-  module.exports = interopDefault(require$$0$4);
+  module.exports = interopDefault(require$$0$5);
 });
 
 var ReactDOM = interopDefault(index$2);
+var render = index$2.render;
+
+var require$$0$4 = Object.freeze({
+  default: ReactDOM,
+  render: render
+});
 
 // import './styles/index.styl';
 
@@ -20653,7 +20669,7 @@ var OAuthdWeb = function () {
       var state = '1938342'; // FIXXME!
 
       return new Promise(function (resolve, reject) {
-        OAuth.popup(provider, { state: state }).done(function (service, bla) {
+        OAuth.popup(provider, { state: state }).done(function (service) {
           // console.log('[OAuthdWeb::popup]: success: ', service);
 
           var token = {
@@ -20730,6 +20746,7 @@ var OAuthdIdentityCard = function (_React$Component) {
       var icon = _props.icon;
       var label = _props.label;
       var description = _props.description;
+      var small = _props.small;
       var _state = this.state;
       var identity = _state.identity;
       var error = _state.error;
@@ -20769,7 +20786,7 @@ var OAuthdIdentityCard = function (_React$Component) {
               )
             )
           ),
-          createElement(
+          small ? null : createElement(
             'p',
             { className: 'identity-card--disconnected__description' },
             description
@@ -20781,7 +20798,32 @@ var OAuthdIdentityCard = function (_React$Component) {
         var avatar = _state$identity$profi.avatar;
 
 
-        return createElement(
+        var button = small ? createElement(
+          'div',
+          { className: 'identity-card--disconnected' },
+          createElement(
+            'a',
+            { className: 'rs-icon-btn rs-icon-btn--selected' },
+            createElement(
+              'div',
+              { className: 'rs-icon-btn__icon__wrapper' },
+              createElement(
+                'div',
+                { className: 'rs-icon-btn__icon__wrapper__padding' },
+                createElement('div', { className: 'rs-icon-btn__icon ' + icon })
+              )
+            ),
+            createElement(
+              'div',
+              { className: 'rs-icon-btn__label' },
+              createElement(
+                'div',
+                null,
+                label
+              )
+            )
+          )
+        ) : createElement(
           'div',
           { className: 'identity-card' },
           createElement(
@@ -20796,6 +20838,8 @@ var OAuthdIdentityCard = function (_React$Component) {
           ),
           createElement('div', { className: 'identity-card__icon -rs-icon-slack' })
         );
+
+        return button;
       }
     }
   }, {
@@ -20833,6 +20877,640 @@ OAuthdIdentityCard.propTypes = {
   oauthdUrl: PropTypes.string
 };
 
+var reactSizeme = createCommonjsModule(function (module, exports) {
+  !function (e, t) {
+    "object" == (typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) && "object" == (typeof module === 'undefined' ? 'undefined' : _typeof(module)) ? module.exports = t(interopDefault(require$$1), interopDefault(require$$0$4)) : "function" == typeof define && define.amd ? define("react-sizeme", ["react", "react-dom"], t) : "object" == (typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) ? exports["react-sizeme"] = t(interopDefault(require$$1), interopDefault(require$$0$4)) : e["react-sizeme"] = t(e.React, e.ReactDOM);
+  }(commonjsGlobal, function (e, t) {
+    return function (e) {
+      function t(i) {
+        if (n[i]) return n[i].exports;var r = n[i] = { exports: {}, id: i, loaded: !1 };return e[i].call(r.exports, r, r.exports, t), r.loaded = !0, r.exports;
+      }var n = {};return t.m = e, t.c = n, t.p = "", t(0);
+    }([function (e, t, n) {
+      "use strict";
+      function i(e) {
+        return e && e.__esModule ? e : { "default": e };
+      }function r(e, t) {
+        var n = {};for (var i in e) {
+          t.indexOf(i) < 0 && Object.prototype.hasOwnProperty.call(e, i) && (n[i] = e[i]);
+        }return n;
+      }function o(e, t) {
+        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
+      }function a(e, t) {
+        if (!e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return !t || "object" != (typeof t === 'undefined' ? 'undefined' : _typeof(t)) && "function" != typeof t ? e : t;
+      }function s(e, t) {
+        if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function, not " + (typeof t === 'undefined' ? 'undefined' : _typeof(t)));e.prototype = Object.create(t && t.prototype, { constructor: { value: e, enumerable: !1, writable: !0, configurable: !0 } }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t);
+      }function l(e) {
+        return e.displayName || e.name || "Component";
+      }function c(e) {
+        var t = e.className,
+            n = e.style,
+            i = {};return t || n ? (t && (i.className = t), n && (i.style = n)) : i.style = { width: "100%", height: "100%" }, y.default.createElement("div", i);
+      }function u() {
+        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : T,
+            t = e.monitorWidth,
+            n = void 0 === t ? T.monitorWidth : t,
+            i = e.monitorHeight,
+            r = void 0 === i ? T.monitorHeight : i,
+            c = e.refreshRate,
+            d = void 0 === c ? T.refreshRate : c,
+            h = e.refreshMode,
+            g = void 0 === h ? T.refreshMode : h;(0, E.default)(n || r, 'You have to monitor at least one of the width or height when using the "sizeAware" higher order component'), (0, E.default)(d >= 16, "It is highly recommended that you don't put your refreshRate lower than 16 as this may cause layout thrashing."), (0, E.default)("throttle" === g || "debounce" === g, 'The refreshMode should have a value of "throttle" or "debounce"');var b = "throttle" === g ? p.default : f.default;return function (e) {
+          var t = k(e),
+              i = function (e) {
+            function i() {
+              var e, t, s, l;o(this, i);for (var c = arguments.length, u = Array(c), f = 0; c > f; f++) {
+                u[f] = arguments[f];
+              }return t = s = a(this, (e = i.__proto__ || Object.getPrototypeOf(i)).call.apply(e, [this].concat(u))), s.state = { width: void 0, height: void 0 }, s.refCallback = function (e) {
+                s.element = e;
+              }, s.hasSizeChanged = function (e, t) {
+                var i = e.height,
+                    o = e.width,
+                    a = t.height,
+                    s = t.width;return r && i !== a || n && o !== s;
+              }, s.checkIfSizeChanged = b(function (e) {
+                var t = e.getBoundingClientRect(),
+                    i = t.width,
+                    o = t.height,
+                    a = { width: n ? i : null, height: r ? o : null };s.hasSizeChanged(s.state, a) && s.setState(a);
+              }, d), l = t, a(s, l);
+            }return s(i, e), m(i, [{ key: "componentDidMount", value: function value() {
+                this.handleDOMNode();
+              } }, { key: "componentDidUpdate", value: function value() {
+                this.handleDOMNode();
+              } }, { key: "componentWillUnmount", value: function value() {
+                this.hasSizeChanged = function () {}, this.checkIfSizeChanged = function () {}, this.domEl && ((0, z.default)().removeAllListeners(this.domEl), this.domEl = null);
+              } }, { key: "handleDOMNode", value: function value() {
+                var e = this.element && w.default.findDOMNode(this.element);return e ? (this.domEl && (0, z.default)().removeAllListeners(this.domEl), this.domEl = e, void (0, z.default)().listenTo(this.domEl, this.checkIfSizeChanged)) : void (this.domEl && ((0, z.default)().removeAllListeners(this.domEl), this.domEl = null));
+              } }, { key: "render", value: function value() {
+                var e = this.state,
+                    n = e.width,
+                    i = e.height;return y.default.createElement(t, v({ explicitRef: this.refCallback, size: { width: n, height: i }, disablePlaceholder: !!u.enableSSRBehaviour }, this.props));
+              } }]), i;
+          }(y.default.Component);return i.displayName = "SizeMe(" + l(e) + ")", i.WrappedComponent = e, i;
+        };
+      }Object.defineProperty(t, "__esModule", { value: !0 });var d = n(3),
+          f = i(d),
+          h = n(21),
+          p = i(h),
+          v = Object.assign || function (e) {
+        for (var t = 1; arguments.length > t; t++) {
+          var n = arguments[t];for (var i in n) {
+            Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
+          }
+        }return e;
+      },
+          m = function () {
+        function e(e, t) {
+          for (var n = 0; t.length > n; n++) {
+            var i = t[n];i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i);
+          }
+        }return function (t, n, i) {
+          return n && e(t.prototype, n), i && e(t, i), t;
+        };
+      }(),
+          g = n(23),
+          y = i(g),
+          b = n(24),
+          w = i(b),
+          x = n(17),
+          E = i(x),
+          S = n(5),
+          z = i(S),
+          T = { monitorWidth: !0, monitorHeight: !1, refreshRate: 16, refreshMode: "throttle" },
+          O = function (e) {
+        function t() {
+          return o(this, t), a(this, (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments));
+        }return s(t, e), m(t, [{ key: "render", value: function value() {
+            return g.Children.only(this.props.children);
+          } }]), t;
+      }(g.Component);O.displayName = "SizeMeReferenceWrapper", O.propTypes = { children: g.PropTypes.element.isRequired }, c.displayName = "SizeMePlaceholder", c.propTypes = { className: g.PropTypes.string, style: g.PropTypes.object };var k = function k(e) {
+        function t(t) {
+          var n = t.explicitRef,
+              i = t.className,
+              o = t.style,
+              a = t.size,
+              s = t.disablePlaceholder,
+              l = r(t, ["explicitRef", "className", "style", "size", "disablePlaceholder"]),
+              u = a.width,
+              d = a.height,
+              f = void 0 !== u || void 0 !== d || s ? y.default.createElement(e, v({ className: i, style: o, size: a }, l)) : y.default.createElement(c, { className: i, style: o });return y.default.createElement(O, { ref: n }, f);
+        }return t.displayName = "SizeMeRenderer(" + l(e) + ")", t.propTypes = { explicitRef: g.PropTypes.func.isRequired, className: g.PropTypes.string, style: g.PropTypes.object, size: g.PropTypes.shape({ width: g.PropTypes.number, height: g.PropTypes.number }), disablePlaceholder: g.PropTypes.bool }, t;
+      };u.enableSSRBehaviour = !1, t.default = u;
+    }, function (e, t) {
+      "use strict";
+      var n = e.exports = {};n.isIE = function (e) {
+        function t() {
+          var e = navigator.userAgent.toLowerCase();return e.indexOf("msie") !== -1 || e.indexOf("trident") !== -1 || e.indexOf(" edge/") !== -1;
+        }if (!t()) return !1;if (!e) return !0;var n = function () {
+          var e,
+              t = 3,
+              n = document.createElement("div"),
+              i = n.getElementsByTagName("i");do {
+            n.innerHTML = "<!--[if gt IE " + ++t + "]><i></i><![endif]-->";
+          } while (i[0]);return t > 4 ? t : e;
+        }();return e === n;
+      }, n.isLegacyOpera = function () {
+        return !!window.opera;
+      };
+    }, function (e, t) {
+      "use strict";
+      var n = e.exports = {};n.forEach = function (e, t) {
+        for (var n = 0; e.length > n; n++) {
+          var i = t(e[n]);if (i) return i;
+        }
+      };
+    }, function (e, t, n) {
+      function i(e, t, n) {
+        function i(t) {
+          var n = y,
+              i = b;return y = b = void 0, z = t, x = e.apply(i, n);
+        }function u(e) {
+          return z = e, E = setTimeout(h, t), T ? i(e) : x;
+        }function d(e) {
+          var n = e - S,
+              i = e - z,
+              r = t - n;return O ? c(r, w - i) : r;
+        }function f(e) {
+          var n = e - S,
+              i = e - z;return void 0 === S || n >= t || 0 > n || O && i >= w;
+        }function h() {
+          var e = o();return f(e) ? p(e) : void (E = setTimeout(h, d(e)));
+        }function p(e) {
+          return E = void 0, k && y ? i(e) : (y = b = void 0, x);
+        }function v() {
+          void 0 !== E && clearTimeout(E), z = 0, y = S = b = E = void 0;
+        }function m() {
+          return void 0 === E ? x : p(o());
+        }function g() {
+          var e = o(),
+              n = f(e);if (y = arguments, b = this, S = e, n) {
+            if (void 0 === E) return u(S);if (O) return E = setTimeout(h, t), i(S);
+          }return void 0 === E && (E = setTimeout(h, t)), x;
+        }var y,
+            b,
+            w,
+            x,
+            E,
+            S,
+            z = 0,
+            T = !1,
+            O = !1,
+            k = !0;if ("function" != typeof e) throw new TypeError(s);return t = a(t) || 0, r(n) && (T = !!n.leading, O = "maxWait" in n, w = O ? l(a(n.maxWait) || 0, t) : w, k = "trailing" in n ? !!n.trailing : k), g.cancel = v, g.flush = m, g;
+      }var r = n(4),
+          o = n(20),
+          a = n(22),
+          s = "Expected a function",
+          l = Math.max,
+          c = Math.min;e.exports = i;
+    }, function (e, t) {
+      function n(e) {
+        var t = typeof e === 'undefined' ? 'undefined' : _typeof(e);return !!e && ("object" == t || "function" == t);
+      }e.exports = n;
+    }, function (e, t, n) {
+      "use strict";
+      function i(e) {
+        return e && e.__esModule ? e : { "default": e };
+      }function r() {
+        return s || (s = (0, a.default)({ strategy: "scroll" })), s;
+      }Object.defineProperty(t, "__esModule", { value: !0 });var o = n(10),
+          a = i(o),
+          s = void 0;t.default = r;
+    }, function (e, t, n) {
+      "use strict";
+      function i() {
+        function e(e, t) {
+          t || (t = e, e = 0), e > o ? o = e : a > e && (a = e), i[e] || (i[e] = []), i[e].push(t), r++;
+        }function t() {
+          for (var e = a; o >= e; e++) {
+            for (var t = i[e], n = 0; t.length > n; n++) {
+              var r = t[n];r();
+            }
+          }
+        }function n() {
+          return r;
+        }var i = {},
+            r = 0,
+            o = 0,
+            a = 0;return { add: e, process: t, size: n };
+      }var r = n(7);e.exports = function (e) {
+        function t(e, t) {
+          !p && d && u && 0 === h.size() && a(), h.add(e, t);
+        }function n() {
+          for (p = !0; h.size();) {
+            var e = h;h = i(), e.process();
+          }p = !1;
+        }function o(e) {
+          p || (void 0 === e && (e = u), f && (s(f), f = null), e ? a() : n());
+        }function a() {
+          f = l(n);
+        }function s(e) {
+          var t = clearTimeout;return t(e);
+        }function l(e) {
+          var t = function t(e) {
+            return setTimeout(e, 0);
+          };return t(e);
+        }e = e || {};var c = e.reporter,
+            u = r.getOption(e, "async", !0),
+            d = r.getOption(e, "auto", !0);d && !u && (c && c.warn("Invalid options combination. auto=true and async=false is invalid. Setting async=true."), u = !0);var f,
+            h = i(),
+            p = !1;return { add: t, force: o };
+      };
+    }, function (e, t) {
+      "use strict";
+      function n(e, t, n) {
+        var i = e[t];return void 0 !== i && null !== i || void 0 === n ? i : n;
+      }var i = e.exports = {};i.getOption = n;
+    }, function (e, t, n) {
+      "use strict";
+      var i = n(1);e.exports = function (e) {
+        function t(e, t) {
+          function n() {
+            t(e);
+          }if (!r(e)) throw Error("Element is not detectable by this strategy.");if (i.isIE(8)) l(e).object = { proxy: n }, e.attachEvent("onresize", n);else {
+            var o = r(e);o.contentDocument.defaultView.addEventListener("resize", n);
+          }
+        }function n(e, t, n) {
+          function r(e, t) {
+            function n() {
+              function n() {
+                if ("static" === c.position) {
+                  e.style.position = "relative";var t = function t(e, _t, n, i) {
+                    function r(e) {
+                      return e.replace(/[^-\d\.]/g, "");
+                    }var o = n[i];"auto" !== o && "0" !== r(o) && (e.warn("An element that is positioned static has style." + i + "=" + o + " which is ignored due to the static positioning. The element will need to be positioned relative, so the style." + i + " will be set to 0. Element: ", _t), _t.style[i] = 0);
+                  };t(a, e, c, "top"), t(a, e, c, "right"), t(a, e, c, "bottom"), t(a, e, c, "left");
+                }
+              }function s() {
+                function i(e, t) {
+                  return e.contentDocument ? void t(e.contentDocument) : void setTimeout(function () {
+                    i(e, t);
+                  }, 100);
+                }o || n();var r = this;i(r, function (n) {
+                  t(e);
+                });
+              }"" !== c.position && (n(c), o = !0);var u = document.createElement("object");u.style.cssText = r, u.type = "text/html", u.onload = s, i.isIE() || (u.data = "about:blank"), e.appendChild(u), l(e).object = u, i.isIE() && (u.data = "about:blank");
+            }var r = "display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; padding: 0; margin: 0; opacity: 0; z-index: -1000; pointer-events: none;",
+                o = !1,
+                c = window.getComputedStyle(e),
+                u = e.offsetWidth,
+                d = e.offsetHeight;l(e).startSize = { width: u, height: d }, s ? s.add(n) : n();
+          }n || (n = t, t = e, e = null), e = e || {};i.isIE(8) ? n(t) : r(t, n);
+        }function r(e) {
+          return l(e).object;
+        }function o(e) {
+          i.isIE(8) ? e.detachEvent("onresize", l(e).object.proxy) : e.removeChild(r(e)), delete l(e).object;
+        }e = e || {};var a = e.reporter,
+            s = e.batchProcessor,
+            l = e.stateHandler.getState;if (!a) throw Error("Missing required dependency: reporter.");return { makeDetectable: n, addListener: t, uninstall: o };
+      };
+    }, function (e, t, n) {
+      "use strict";
+      var i = n(2).forEach;e.exports = function (e) {
+        function t() {
+          var e = 500,
+              t = 500,
+              n = document.createElement("div");n.style.cssText = "position: absolute; width: " + 2 * e + "px; height: " + 2 * t + "px; visibility: hidden; margin: 0; padding: 0;";var i = document.createElement("div");i.style.cssText = "position: absolute; width: " + e + "px; height: " + t + "px; overflow: scroll; visibility: none; top: " + 3 * -e + "px; left: " + 3 * -t + "px; visibility: hidden; margin: 0; padding: 0;", i.appendChild(n), document.body.insertBefore(i, document.body.firstChild);var r = e - i.clientWidth,
+              o = t - i.clientHeight;return document.body.removeChild(i), { width: r, height: o };
+        }function n(e, t) {
+          function n(t, n) {
+            n = n || function (e) {
+              document.head.appendChild(e);
+            };var i = document.createElement("style");return i.innerHTML = t, i.id = e, n(i), i;
+          }if (!document.getElementById(e)) {
+            var i = t + "_animation",
+                r = t + "_animation_active",
+                o = "/* Created by the element-resize-detector library. */\n";o += "." + t + " > div::-webkit-scrollbar { display: none; }\n\n", o += "." + r + " { -webkit-animation-duration: 0.1s; animation-duration: 0.1s; -webkit-animation-name: " + i + "; animation-name: " + i + "; }\n", o += "@-webkit-keyframes " + i + " { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }\n", o += "@keyframes " + i + " { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }", n(o);
+          }
+        }function r(e) {
+          e.className += " " + y + "_animation_active";
+        }function o(e, t, n) {
+          if (e.addEventListener) e.addEventListener(t, n);else {
+            if (!e.attachEvent) return f.error("[scroll] Don't know how to add event listeners.");e.attachEvent("on" + t, n);
+          }
+        }function a(e, t, n) {
+          if (e.removeEventListener) e.removeEventListener(t, n);else {
+            if (!e.detachEvent) return f.error("[scroll] Don't know how to remove event listeners.");e.detachEvent("on" + t, n);
+          }
+        }function s(e) {
+          return p(e).container.childNodes[0].childNodes[0].childNodes[0];
+        }function l(e) {
+          return p(e).container.childNodes[0].childNodes[0].childNodes[1];
+        }function c(e, t) {
+          var n = p(e).listeners;if (!n.push) throw Error("Cannot add listener to an element that is not detectable.");p(e).listeners.push(t);
+        }function u(e, t, n) {
+          function a() {
+            if (e.debug) {
+              var n = Array.prototype.slice.call(arguments);if (n.unshift(v.get(t), "Scroll: "), f.log.apply) f.log.apply(null, n);else for (var i = 0; n.length > i; i++) {
+                f.log(n[i]);
+              }
+            }
+          }function c(e) {
+            function t(e) {
+              return e === e.ownerDocument.body || e.ownerDocument.body.contains(e);
+            }return !t(e);
+          }function u(e) {
+            var t = p(e).container.childNodes[0];return getComputedStyle(t).width.indexOf("px") === -1;
+          }function d() {
+            var e = getComputedStyle(t),
+                n = {};return n.position = e.position, n.width = t.offsetWidth, n.height = t.offsetHeight, n.top = e.top, n.right = e.right, n.bottom = e.bottom, n.left = e.left, n.widthCSS = e.width, n.heightCSS = e.height, n;
+          }function g() {
+            var e = d();p(t).startSize = { width: e.width, height: e.height }, a("Element start size", p(t).startSize);
+          }function b() {
+            p(t).listeners = [];
+          }function w() {
+            if (a("storeStyle invoked."), !p(t)) return void a("Aborting because element has been uninstalled");var e = d();p(t).style = e;
+          }function x(e, t, n) {
+            p(e).lastWidth = t, p(e).lastHeight = n;
+          }function E(e) {
+            return s(e).childNodes[0];
+          }function S() {
+            return 2 * m.width + 1;
+          }function z() {
+            return 2 * m.height + 1;
+          }function T(e) {
+            return e + 10 + S();
+          }function O(e) {
+            return e + 10 + z();
+          }function k(e) {
+            return 2 * e + S();
+          }function C(e) {
+            return 2 * e + z();
+          }function N(e, t, n) {
+            var i = s(e),
+                r = l(e),
+                o = T(t),
+                a = O(n),
+                c = k(t),
+                u = C(n);i.scrollLeft = o, i.scrollTop = a, r.scrollLeft = c, r.scrollTop = u;
+          }function j() {
+            var e = p(t).container;return e || (e = document.createElement("div"), e.className = y, e.style.cssText = "visibility: hidden; display: inline; width: 0px; height: 0px; z-index: -1; overflow: hidden; margin: 0; padding: 0;", p(t).container = e, r(e), t.appendChild(e), o(e, "animationstart", function () {
+              p(t).onRendered && p(t).onRendered();
+            })), e;
+          }function A() {
+            function e() {
+              var e = p(t).style;if ("static" === e.position) {
+                t.style.position = "relative";var n = function n(e, t, _n, i) {
+                  function r(e) {
+                    return e.replace(/[^-\d\.]/g, "");
+                  }var o = _n[i];"auto" !== o && "0" !== r(o) && (e.warn("An element that is positioned static has style." + i + "=" + o + " which is ignored due to the static positioning. The element will need to be positioned relative, so the style." + i + " will be set to 0. Element: ", t), t.style[i] = 0);
+                };n(f, t, e, "top"), n(f, t, e, "right"), n(f, t, e, "bottom"), n(f, t, e, "left");
+              }
+            }function n(e, t, n, i) {
+              return e = e ? e + "px" : "0", t = t ? t + "px" : "0", n = n ? n + "px" : "0", i = i ? i + "px" : "0", "left: " + e + "; top: " + t + "; right: " + i + "; bottom: " + n + ";";
+            }function i() {
+              p(t).onExpand && p(t).onExpand();
+            }function r() {
+              p(t).onShrink && p(t).onShrink();
+            }if (a("Injecting elements"), !p(t)) return void a("Aborting because element has been uninstalled");e();var s = p(t).container;s || (s = j());var l = m.width,
+                c = m.height,
+                u = "position: absolute; overflow: hidden; z-index: -1; visibility: hidden; width: 100%; height: 100%; left: 0px; top: 0px;",
+                d = "position: absolute; overflow: hidden; z-index: -1; visibility: hidden; " + n(-(1 + l), -(1 + c), -c, -l),
+                h = "position: absolute; overflow: scroll; z-index: -1; visibility: hidden; width: 100%; height: 100%;",
+                v = "position: absolute; overflow: scroll; z-index: -1; visibility: hidden; width: 100%; height: 100%;",
+                g = "position: absolute; left: 0; top: 0;",
+                b = "position: absolute; width: 200%; height: 200%;",
+                w = document.createElement("div"),
+                x = document.createElement("div"),
+                E = document.createElement("div"),
+                S = document.createElement("div"),
+                z = document.createElement("div"),
+                T = document.createElement("div");w.dir = "ltr", w.style.cssText = u, w.className = y, x.className = y, x.style.cssText = d, E.style.cssText = h, S.style.cssText = g, z.style.cssText = v, T.style.cssText = b, E.appendChild(S), z.appendChild(T), x.appendChild(E), x.appendChild(z), w.appendChild(x), s.appendChild(w), o(E, "scroll", i), o(z, "scroll", r), p(t).onExpandScroll = i, p(t).onShrinkScroll = r;
+          }function M() {
+            function n(e, t, n) {
+              var i = E(e),
+                  r = T(t),
+                  o = O(n);i.style.width = r + "px", i.style.height = o + "px";
+            }function r(i) {
+              var r = t.offsetWidth,
+                  o = t.offsetHeight;a("Storing current size", r, o), x(t, r, o), h.add(0, function () {
+                if (!p(t)) return void a("Aborting because element has been uninstalled");if (e.debug) {
+                  var i = t.offsetWidth,
+                      s = t.offsetHeight;i === r && s === o || f.warn(v.get(t), "Scroll: Size changed before updating detector elements.");
+                }n(t, r, o);
+              }), h.add(1, function () {
+                return p(t) ? void N(t, r, o) : void a("Aborting because element has been uninstalled");
+              }), i && h.add(2, function () {
+                return p(t) ? void i() : void a("Aborting because element has been uninstalled");
+              });
+            }function o() {
+              function e() {
+                return void 0 === p(t).lastNotifiedWidth;
+              }a("notifyListenersIfNeeded invoked");var n = p(t);return e() && n.lastWidth === n.startSize.width && n.lastHeight === n.startSize.height ? a("Not notifying: Size is the same as the start size, and there has been no notification yet.") : n.lastWidth === n.lastNotifiedWidth && n.lastHeight === n.lastNotifiedHeight ? a("Not notifying: Size already notified") : (a("Current size not notified, notifying..."), n.lastNotifiedWidth = n.lastWidth, n.lastNotifiedHeight = n.lastHeight, void i(p(t).listeners, function (e) {
+                e(t);
+              }));
+            }function c() {
+              if (a("startanimation triggered."), u(t)) return void a("Ignoring since element is still unrendered...");a("Element rendered.");var e = s(t),
+                  n = l(t);0 !== e.scrollLeft && 0 !== e.scrollTop && 0 !== n.scrollLeft && 0 !== n.scrollTop || (a("Scrollbars out of sync. Updating detector elements..."), r(o));
+            }function d() {
+              if (a("Scroll detected."), u(t)) return void a("Scroll event fired while unrendered. Ignoring...");var e = t.offsetWidth,
+                  n = t.offsetHeight;e !== t.lastWidth || n !== t.lastHeight ? (a("Element size changed."), r(o)) : a("Element size has not changed (" + e + "x" + n + ").");
+            }if (a("registerListenersAndPositionElements invoked."), !p(t)) return void a("Aborting because element has been uninstalled");p(t).onRendered = c, p(t).onExpand = d, p(t).onShrink = d;var m = p(t).style;n(t, m.width, m.height);
+          }function _() {
+            if (a("finalizeDomMutation invoked."), !p(t)) return void a("Aborting because element has been uninstalled");var e = p(t).style;x(t, e.width, e.height), N(t, e.width, e.height);
+          }function H() {
+            n(t);
+          }function P() {
+            a("Installing..."), b(), g(), h.add(0, w), h.add(1, A), h.add(2, M), h.add(3, _), h.add(4, H);
+          }n || (n = t, t = e, e = null), e = e || {}, a("Making detectable..."), c(t) ? (a("Element is detached"), j(), a("Waiting until element is attached..."), p(t).onRendered = function () {
+            a("Element is now attached"), P();
+          }) : P();
+        }function d(e) {
+          var t = p(e);t && (t.busy || (a(s(e), "scroll", t.onExpandScroll), a(l(e), "scroll", t.onShrinkScroll), e.removeChild(t.container)));
+        }e = e || {};var f = e.reporter,
+            h = e.batchProcessor,
+            p = e.stateHandler.getState,
+            v = e.idHandler;if (!h) throw Error("Missing required dependency: batchProcessor");if (!f) throw Error("Missing required dependency: reporter.");var m = t(),
+            g = "erd_scroll_detection_scrollbar_style",
+            y = "erd_scroll_detection_container";return n(g, y), { makeDetectable: u, addListener: c, uninstall: d };
+      };
+    }, function (e, t, n) {
+      "use strict";
+      function i(e) {
+        return Array.isArray(e) || void 0 !== e.length;
+      }function r(e) {
+        if (Array.isArray(e)) return e;var t = [];return s(e, function (e) {
+          t.push(e);
+        }), t;
+      }function o(e) {
+        return e && 1 === e.nodeType;
+      }function a(e, t, n) {
+        var i = e[t];return void 0 !== i && null !== i || void 0 === n ? i : n;
+      }var s = n(2).forEach,
+          l = n(11),
+          c = n(14),
+          u = n(12),
+          d = n(13),
+          f = n(15),
+          h = n(1),
+          p = n(6),
+          v = n(16),
+          m = n(8),
+          g = n(9);e.exports = function (e) {
+        function t(e, t, n) {
+          function l(e) {
+            var t = O.get(e);s(t, function (t) {
+              t(e);
+            });
+          }function c(e, t, n) {
+            O.add(t, n), e && n(t);
+          }if (n || (n = t, t = e, e = {}), !t) throw Error("At least one element required.");if (!n) throw Error("Listener required.");if (o(t)) t = [t];else {
+            if (!i(t)) return x.error("Invalid arguments. Must be a DOM element or a collection of DOM elements.");t = r(t);
+          }var u = 0,
+              d = a(e, "callOnAdd", z.callOnAdd),
+              f = a(e, "onReady", function () {}),
+              h = a(e, "debug", z.debug);s(t, function (e) {
+            v.getState(e) || (v.initState(e), y.set(e));var i = y.get(e);return h && x.log("Attaching listener to element", i, e), k.isDetectable(e) ? (h && x.log(i, "Already detecable, adding listener."), c(d, e, n), void u++) : (h && x.log(i, "Not detectable."), k.isBusy(e) ? (h && x.log(i, "System busy making it detectable"), c(d, e, n), j[i] = j[i] || [], void j[i].push(function () {
+              u++, u === t.length && f();
+            })) : (h && x.log(i, "Making detectable..."), k.markBusy(e, !0), T.makeDetectable({ debug: h }, e, function (e) {
+              if (h && x.log(i, "onElementDetectable"), v.getState(e)) {
+                if (k.markAsDetectable(e), k.markBusy(e, !1), T.addListener(e, l), c(d, e, n), v.getState(e).startSize) {
+                  var r = e.offsetWidth,
+                      o = e.offsetHeight;v.getState(e).startSize.width === r && v.getState(e).startSize.height === o || l(e);
+                }j[i] && s(j[i], function (e) {
+                  e();
+                });
+              } else h && x.log(i, "Element uninstalled before being detectable.");delete j[i], u++, u === t.length && f();
+            })));
+          }), u === t.length && f();
+        }function n(e) {
+          if (!e) return x.error("At least one element is required.");if (o(e)) e = [e];else {
+            if (!i(e)) return x.error("Invalid arguments. Must be a DOM element or a collection of DOM elements.");e = r(e);
+          }s(e, function (e) {
+            O.removeAllListeners(e), T.uninstall(e), v.cleanState(e);
+          });
+        }e = e || {};var y;if (e.idHandler) y = { get: function get(t) {
+            return e.idHandler.get(t, !0);
+          }, set: e.idHandler.set };else {
+          var b = u(),
+              w = d({ idGenerator: b, stateHandler: v });y = w;
+        }var x = e.reporter;if (!x) {
+          var E = x === !1;x = f(E);
+        }var S = a(e, "batchProcessor", p({ reporter: x })),
+            z = {};z.callOnAdd = !!a(e, "callOnAdd", !0), z.debug = !!a(e, "debug", !1);var T,
+            O = c(y),
+            k = l({ stateHandler: v }),
+            C = a(e, "strategy", "object"),
+            N = { reporter: x, batchProcessor: S, stateHandler: v, idHandler: y };if ("scroll" === C && (h.isLegacyOpera() ? (x.warn("Scroll strategy is not supported on legacy Opera. Changing to object strategy."), C = "object") : h.isIE(9) && (x.warn("Scroll strategy is not supported on IE9. Changing to object strategy."), C = "object")), "scroll" === C) T = g(N);else {
+          if ("object" !== C) throw Error("Invalid strategy name: " + C);T = m(N);
+        }var j = {};return { listenTo: t, removeListener: O.removeListener, removeAllListeners: O.removeAllListeners, uninstall: n };
+      };
+    }, function (e, t) {
+      "use strict";
+      e.exports = function (e) {
+        function t(e) {
+          var t = o(e);return t && !!t.isDetectable;
+        }function n(e) {
+          o(e).isDetectable = !0;
+        }function i(e) {
+          return !!o(e).busy;
+        }function r(e, t) {
+          o(e).busy = !!t;
+        }var o = e.stateHandler.getState;return { isDetectable: t, markAsDetectable: n, isBusy: i, markBusy: r };
+      };
+    }, function (e, t) {
+      "use strict";
+      e.exports = function () {
+        function e() {
+          return t++;
+        }var t = 1;return { generate: e };
+      };
+    }, function (e, t) {
+      "use strict";
+      e.exports = function (e) {
+        function t(e) {
+          var t = r(e);return t && void 0 !== t.id ? t.id : null;
+        }function n(e) {
+          var t = r(e);if (!t) throw Error("setId required the element to have a resize detection state.");var n = i.generate();return t.id = n, n;
+        }var i = e.idGenerator,
+            r = e.stateHandler.getState;return { get: t, set: n };
+      };
+    }, function (e, t) {
+      "use strict";
+      e.exports = function (e) {
+        function t(t) {
+          var n = e.get(t);return void 0 === n ? [] : o[n] || [];
+        }function n(t, n) {
+          var i = e.get(t);o[i] || (o[i] = []), o[i].push(n);
+        }function i(e, n) {
+          for (var i = t(e), r = 0, o = i.length; o > r; ++r) {
+            if (i[r] === n) {
+              i.splice(r, 1);break;
+            }
+          }
+        }function r(e) {
+          var n = t(e);n && (n.length = 0);
+        }var o = {};return { get: t, add: n, removeListener: i, removeAllListeners: r };
+      };
+    }, function (e, t) {
+      "use strict";
+      e.exports = function (e) {
+        function t() {}var n = { log: t, warn: t, error: t };if (!e && window.console) {
+          var i = function i(e, t) {
+            e[t] = function () {
+              var e = console[t];if (e.apply) e.apply(console, arguments);else for (var n = 0; arguments.length > n; n++) {
+                e(arguments[n]);
+              }
+            };
+          };i(n, "log"), i(n, "warn"), i(n, "error");
+        }return n;
+      };
+    }, function (e, t) {
+      "use strict";
+      function n(e) {
+        return e[o] = {}, i(e);
+      }function i(e) {
+        return e[o];
+      }function r(e) {
+        delete e[o];
+      }var o = "_erd";e.exports = { initState: n, getState: i, cleanState: r };
+    }, function (e, t, n) {
+      "use strict";
+      var i = function i(e, t, n, _i, r, o, a, s) {
+        if (!e) {
+          var l;if (void 0 === t) l = Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {
+            var c = [n, _i, r, o, a, s],
+                u = 0;l = Error(t.replace(/%s/g, function () {
+              return c[u++];
+            })), l.name = "Invariant Violation";
+          }throw l.framesToPop = 1, l;
+        }
+      };e.exports = i;
+    }, function (e, t) {
+      (function (t) {
+        var n = "object" == (typeof t === 'undefined' ? 'undefined' : _typeof(t)) && t && t.Object === Object && t;e.exports = n;
+      }).call(t, function () {
+        return this;
+      }());
+    }, function (e, t, n) {
+      var i = n(18),
+          r = "object" == (typeof self === 'undefined' ? 'undefined' : _typeof(self)) && self && self.Object === Object && self,
+          o = i || r || Function("return this")();e.exports = o;
+    }, function (e, t, n) {
+      var i = n(19),
+          r = function r() {
+        return i.Date.now();
+      };e.exports = r;
+    }, function (e, t, n) {
+      function i(e, t, n) {
+        var i = !0,
+            s = !0;if ("function" != typeof e) throw new TypeError(a);return o(n) && (i = "leading" in n ? !!n.leading : i, s = "trailing" in n ? !!n.trailing : s), r(e, t, { leading: i, maxWait: t, trailing: s });
+      }var r = n(3),
+          o = n(4),
+          a = "Expected a function";e.exports = i;
+    }, function (e, t) {
+      function n(e) {
+        return e;
+      }e.exports = n;
+    }, function (t, n) {
+      t.exports = e;
+    }, function (e, n) {
+      e.exports = t;
+    }]);
+  });
+});
+
+var sizeMe = interopDefault(reactSizeme);
+
 // import './styles/index.styl';
 
 var OAUTHD_KEY = 'Qa7zbCXfaIjd8eJ1oAKY6nG3SEQ';
@@ -20863,12 +21541,17 @@ var ConnectedFirstUse = function (_React$Component) {
   createClass(ConnectedFirstUse, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _state = this.state;
       var currentPage = _state.currentPage;
       var twitterIdentity = _state.twitterIdentity;
       var angellistIdentity = _state.angellistIdentity;
       var slackIdentity = _state.slackIdentity;
+      var size = this.props.size;
 
+
+      var isMicro = size.width <= 232;
 
       return createElement(
         Wizard,
@@ -20895,7 +21578,21 @@ var ConnectedFirstUse = function (_React$Component) {
                 ' Sift!'
               )
             ),
-            createElement(
+            isMicro ? createElement(
+              'div',
+              { className: 'page__content' },
+              createElement(
+                'p',
+                null,
+                'Attach social account to run ',
+                createElement(
+                  'strong',
+                  null,
+                  'Connected'
+                ),
+                ' Sift'
+              )
+            ) : createElement(
               'div',
               { className: 'page__content' },
               createElement(
@@ -20908,12 +21605,16 @@ var ConnectedFirstUse = function (_React$Component) {
             createElement(
               'p',
               { className: 'page__description' },
-              'To get started connect 1 or more social accounts.s'
+              'To get started connect 1 or more social accounts.'
             ),
             createElement(
               'div',
               { className: 'page__buttons' },
-              createElement(
+              isMicro ? createElement(
+                'button',
+                { onClick: this._next, className: 'rs-btn--green rs-btn--small' },
+                'Next'
+              ) : createElement(
                 'button',
                 { onClick: this._next, className: 'rs-btn--green' },
                 'Next'
@@ -20927,7 +21628,7 @@ var ConnectedFirstUse = function (_React$Component) {
           createElement(
             'div',
             { className: 'page' },
-            createElement('div', { className: 'page__header-icon -rs-icon-redsift-red' }),
+            createElement('div', { className: 'page__header-icon -rs-icon-connected' }),
             createElement(
               'div',
               { className: 'page__heading' },
@@ -20944,6 +21645,7 @@ var ConnectedFirstUse = function (_React$Component) {
                 'div',
                 { className: 'connected__federated-buttons' },
                 createElement(OAuthdIdentityCard, {
+                  small: isMicro,
                   icon: '-rs-icon-twitter',
                   label: 'Connect Twitter',
                   onConnected: this._onIdentityConnected,
@@ -20952,6 +21654,7 @@ var ConnectedFirstUse = function (_React$Component) {
                   oauthdUrl: OAUTHD_URL
                 }),
                 createElement(OAuthdIdentityCard, {
+                  small: isMicro,
                   icon: '-rs-icon-angellist',
                   label: 'Connect AngelList',
                   onConnected: this._onIdentityConnected,
@@ -20969,9 +21672,13 @@ var ConnectedFirstUse = function (_React$Component) {
             createElement(
               'div',
               { className: 'page__buttons' },
-              createElement(
+              isMicro ? createElement(
                 'button',
-                { onClick: this._next, className: 'rs-btn--green', disabled: true },
+                { className: 'rs-btn--green rs-btn--small', disabled: true },
+                'Next'
+              ) : createElement(
+                'button',
+                { className: 'rs-btn--green', disabled: true },
                 'Next'
               )
             )
@@ -20983,7 +21690,7 @@ var ConnectedFirstUse = function (_React$Component) {
           createElement(
             'div',
             { className: 'page' },
-            createElement('div', { className: 'page__header-icon -rs-icon-redsift-red' }),
+            createElement('div', { className: 'page__header-icon -rs-icon-connected' }),
             createElement(
               'div',
               { className: 'page__heading' },
@@ -21000,6 +21707,7 @@ var ConnectedFirstUse = function (_React$Component) {
                 'div',
                 { className: 'connected__federated-buttons' },
                 createElement(OAuthdIdentityCard, {
+                  small: isMicro,
                   icon: '-rs-icon-twitter',
                   label: 'Connect Twitter',
                   description: 'Improve results by connecting to Twitter.',
@@ -21010,6 +21718,7 @@ var ConnectedFirstUse = function (_React$Component) {
                   oauthdUrl: OAUTHD_URL
                 }),
                 createElement(OAuthdIdentityCard, {
+                  small: isMicro,
                   icon: '-rs-icon-angellist',
                   label: 'Connect AngelList',
                   description: 'Improve results by connecting to AngelList.',
@@ -21029,9 +21738,15 @@ var ConnectedFirstUse = function (_React$Component) {
             createElement(
               'div',
               { className: 'page__buttons' },
-              createElement(
+              isMicro ? createElement(
                 'button',
-                { onClick: this._skip, className: 'rs-btn--green' },
+                { onClick: function onClick() {
+                    return _this2._goto(7);
+                  }, className: 'rs-btn--green rs-btn--small' },
+                'Next'
+              ) : createElement(
+                'button',
+                { onClick: this._next, className: 'rs-btn--green' },
                 'Next'
               )
             )
@@ -21043,7 +21758,7 @@ var ConnectedFirstUse = function (_React$Component) {
           createElement(
             'div',
             { className: 'page' },
-            createElement('div', { className: 'page__header-icon -rs-icon-redsift-red' }),
+            createElement('div', { className: 'page__header-icon -rs-icon-connected' }),
             createElement(
               'div',
               { className: 'page__heading' },
@@ -21060,12 +21775,14 @@ var ConnectedFirstUse = function (_React$Component) {
                 'div',
                 { className: 'connected__federated-buttons' },
                 createElement(OAuthdIdentityCard, {
+                  small: isMicro,
                   icon: '-rs-icon-twitter',
                   label: 'Connect Twitter',
                   description: 'Improve results by connecting to Twitter.',
                   identity: twitterIdentity
                 }),
                 createElement(OAuthdIdentityCard, {
+                  small: isMicro,
                   icon: '-rs-icon-angellist',
                   label: 'Connect AngelList',
                   description: 'Improve results by connecting to AngelList.',
@@ -21081,7 +21798,13 @@ var ConnectedFirstUse = function (_React$Component) {
             createElement(
               'div',
               { className: 'page__buttons' },
-              createElement(
+              isMicro ? createElement(
+                'button',
+                { onClick: function onClick() {
+                    return _this2._goto(7);
+                  }, className: 'rs-btn--green rs-btn--small' },
+                'Next'
+              ) : createElement(
                 'button',
                 { onClick: this._next, className: 'rs-btn--green' },
                 'Next'
@@ -21095,7 +21818,7 @@ var ConnectedFirstUse = function (_React$Component) {
           createElement(
             'div',
             { className: 'page' },
-            createElement('div', { className: 'page__header-icon -rs-icon-redsift-red' }),
+            createElement('div', { className: 'page__header-icon -rs-icon-connected' }),
             createElement(
               'div',
               { className: 'page__heading' },
@@ -21150,6 +21873,7 @@ var ConnectedFirstUse = function (_React$Component) {
               'div',
               { className: 'page__content' },
               createElement(OAuthdIdentityCard, {
+                small: isMicro,
                 icon: '-rs-icon-slack',
                 label: 'Connect Slack',
                 onConnected: this._onIdentityConnected,
@@ -21180,7 +21904,7 @@ var ConnectedFirstUse = function (_React$Component) {
           createElement(
             'div',
             { className: 'page' },
-            createElement('div', { className: 'page__header-icon -rs-icon-redsift-red' }),
+            createElement('div', { className: 'page__header-icon -rs-icon-connected' }),
             createElement(
               'div',
               { className: 'page__heading' },
@@ -21193,13 +21917,34 @@ var ConnectedFirstUse = function (_React$Component) {
             createElement(
               'div',
               { className: 'page__content' },
-              slackIdentity ? createElement(
+              slackIdentity ? isMicro ? createElement(
+                'p',
+                null,
+                'Great! You\'re all setup and ready to run ',
+                createElement(
+                  'strong',
+                  null,
+                  'Connected'
+                ),
+                ' Sift.'
+              ) : createElement(
                 'div',
                 { className: 'connected__federated-buttons' },
                 createElement(OAuthdIdentityCard, {
+                  small: isMicro,
                   icon: '-rs-icon-slack',
                   identity: slackIdentity
                 })
+              ) : isMicro ? createElement(
+                'p',
+                null,
+                'Great! You\'re ready to run ',
+                createElement(
+                  'strong',
+                  null,
+                  'Connected'
+                ),
+                ' Sift.'
               ) : createElement('div', { className: 'page__header-icon -rs-icon-redsift-red' })
             ),
             slackIdentity ? createElement(
@@ -21226,7 +21971,11 @@ var ConnectedFirstUse = function (_React$Component) {
             createElement(
               'div',
               { className: 'page__buttons' },
-              createElement(
+              isMicro ? createElement(
+                'button',
+                { onClick: this._run, className: 'rs-btn--green rs-btn--small' },
+                'Run'
+              ) : createElement(
                 'button',
                 { onClick: this._run, className: 'rs-btn--green' },
                 'Run'
@@ -21249,6 +21998,12 @@ var ConnectedFirstUse = function (_React$Component) {
       this.setState({ currentPage: currentPage });
     }
   }, {
+    key: '_goto',
+    value: function _goto(numPage) {
+      var currentPage = numPage;
+      this.setState({ currentPage: currentPage });
+    }
+  }, {
     key: '_run',
     value: function _run() {
       alert('RUNNING SIFT!');
@@ -21265,7 +22020,9 @@ var ConnectedFirstUse = function (_React$Component) {
   return ConnectedFirstUse;
 }(Component);
 
-ReactDOM.render(createElement(ConnectedFirstUse, null), document.getElementById('content'));
+var ConnectedFirstUse$1 = sizeMe()(ConnectedFirstUse);
+
+ReactDOM.render(createElement(ConnectedFirstUse$1, null), document.getElementById('content'));
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

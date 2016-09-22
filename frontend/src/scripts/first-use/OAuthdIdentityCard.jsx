@@ -34,7 +34,7 @@ export default class OAuthdIdentityCard extends React.Component {
   }
 
   render() {
-    const { icon, label, description } = this.props;
+    const { icon, label, description, small } = this.props;
     const { identity, error } = this.state;
 
     if (error) {
@@ -57,19 +57,36 @@ export default class OAuthdIdentityCard extends React.Component {
             </div>
           </a>
 
-          <p className="identity-card--disconnected__description">{description}</p>
+          { small ? null : (
+            <p className="identity-card--disconnected__description">{description}</p>
+          )}
         </div>
       );
     } else {
       const { alias, avatar } = this.state.identity.profile;
 
-      return (
+      let button = small ? (
+        <div className="identity-card--disconnected">
+          <a className="rs-icon-btn rs-icon-btn--selected">
+            <div className="rs-icon-btn__icon__wrapper">
+              <div className="rs-icon-btn__icon__wrapper__padding">
+                <div className={`rs-icon-btn__icon ${icon}`}></div>
+              </div>
+            </div>
+            <div className="rs-icon-btn__label">
+              <div>{label}</div>
+            </div>
+          </a>
+        </div>
+      ) : (
         <div className="identity-card">
           <div className="identity-card__avatar"><img src={avatar} /></div>
           <div className="identity-card__alias">{alias}</div>
           <div className="identity-card__icon -rs-icon-slack"></div>
         </div>
-      );
+      )
+
+      return button;
     }
   }
 

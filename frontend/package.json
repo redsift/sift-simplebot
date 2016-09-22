@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-sizeme": "^2.2.0"
   },
   "devDependencies": {
     "@redsift/redsift-bundler": "0.5.2",
