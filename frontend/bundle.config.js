@@ -2,10 +2,10 @@
  * Main scripts for the Sift to be bundled
  */
 var mainJS = [
-  {
-    name: 'first-use', // prefix for output file
-    indexFile: './src/scripts/first-use/index.js' // the index file
-  },
+  // {
+  //   name: 'first-use', // prefix for output file
+  //   indexFile: './src/scripts/first-use/index.js' // the index file
+  // },
   {
     name: 'view', // prefix for output file
     indexFile: './src/scripts/view.js' // the index file
@@ -27,6 +27,10 @@ var styles = [
   {
     name: 'style',
     indexFile: './src/styles/style.css'
+  },
+  {
+    name: 'first-use',
+    indexFile: './src/scripts/first-use/styles/index.styl'
   }
 ];
 

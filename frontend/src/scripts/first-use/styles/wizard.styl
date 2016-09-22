@@ -1,0 +1,156 @@
+
+/* Step Components */
+.steps-component {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%
+}
+.steps-component .steps-navigator {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 2em 0;
+
+  padding: 0;
+}
+.steps-component .steps-navigator li {
+  display: inline-block;
+  // float: left;
+  // width: 33.3%;
+  // text-align: center;
+  // padding: 13px;
+  // box-sizing: border-box;
+  // cursor: pointer;
+  // background: whitesmoke;
+  width: $stepNavigator.bullet.width
+  height: $stepNavigator.bullet.height
+  background: $stepNavigator.color.backgroundInactive;
+  margin: $stepNavigator.bullet.offset;
+  transform: rotate($stepNavigator.bullet.rotation);
+  border: 1px solid $stepNavigator.color.borderInactive;
+}
+// .steps-component .steps-navigator li:nth-child(2n) {
+//   border-right: 1px solid #ccc;
+//   border-left: 1px solid #ccc;
+// }
+// .steps-component .steps-navigator li .number {
+//   background: white;
+//   width: 24px;
+//   border-radius: 15px;
+//   display: inline-block;
+//   height: 24px;
+//   text-align: center;
+//   line-height: 26px;
+//   color: #000;
+// }
+.steps-component .steps-navigator li.active-step {
+  background: $stepNavigator.color.backgroundActive;
+  border: 1px solid $stepNavigator.color.borderActive;
+}
+.steps-component .steps-content {
+  width: 100%;
+  box-sizing: border-box;
+  // padding: 20px;
+  // margin: 25px 0;
+  box-shadow: 0px 0px 8px #ccc;
+}
+.steps-component .steps-content .form-title {
+  color: #424242;
+  font-weight: bold;
+  font-size: 12px;
+}
+.steps-component .steps-content .form-data {
+  width: 100%;
+  float: left;
+  clear: both;
+}
+.steps-component .steps-content .form-data label {
+  float: left;
+  clear: both;
+  font-size: 14px;
+  margin: 21px 0 5px;
+  color: #525151;
+}
+.steps-component .steps-content .form-data input {
+  width: 100%;
+  float: left;
+  clear: both;
+  padding: 7px;
+  font-size: 18px;
+  box-sizing: border-box;
+  outline: none;
+}
+.steps-component .steps-content .finish-button {
+  width: 100px;
+  background: red;
+  float: right;
+  padding: 8px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 20px 0 0;
+  cursor: pointer;
+}
+.steps-component .steps-nav {
+  float: left;
+  clear: both;
+}
+.steps-component .steps-nav button {
+  background: #50BB50;
+  border: 0px;
+  font-size: 21px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  position: absolute;
+  outline: none;
+}
+.steps-component .steps-nav button:disabled {
+  background: #ccc;
+}
+.steps-component .steps-nav .steps-nav-prev {
+  left: -50px;
+  top: 100px;
+}
+.steps-component .steps-nav .steps-nav-next {
+  right: -50px;
+  top: 100px;
+}
+
+/* Intro */
+.intro {
+  font-family: sans-serif;
+  text-align: center;
+}
+.intro .title {
+  font-size: 30px;
+}
+
++above(230px) {
+  .steps-component {
+    width: 230px;
+  }
+
+}
+
++above(470px) {
+  .steps-component {
+    width: 100%;
+  }
+}
+
++above(700px) {
+  .steps-component {
+    width: 700px;
+    padding: 0 3em;
+  }
+}
+
++above(1400px) {
+  .steps-component {
+    width: 50vw;
+  }
+}
