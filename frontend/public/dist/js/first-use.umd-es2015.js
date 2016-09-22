@@ -20653,10 +20653,11 @@ var OAuthdWeb = function () {
       var state = '1938342'; // FIXXME!
 
       return new Promise(function (resolve, reject) {
-        OAuth.popup(provider, { state: state }).done(function (service) {
+        OAuth.popup(provider, { state: state }).done(function (service, bla) {
           // console.log('[OAuthdWeb::popup]: success: ', service);
+
           var token = {
-            access_token: service.access_token,
+            access_token: service.access_token, // FIXXME
             oauth_token: service.oauth_token,
             oauth_token_secret: service.oauth_token_secret
           };
@@ -20672,7 +20673,7 @@ var OAuthdWeb = function () {
             reject(e);
           });
         }).fail(function (e) {
-          console.error('[OAuthdWeb::popup]: popup failed: ', provider);
+          console.error('[OAuthdWeb::popup]: popup failed: ', provider, e);
           reject(e);
         });
       });
@@ -20834,6 +20835,9 @@ OAuthdIdentityCard.propTypes = {
 
 // import './styles/index.styl';
 
+var OAUTHD_KEY = 'Qa7zbCXfaIjd8eJ1oAKY6nG3SEQ';
+var OAUTHD_URL = 'https://oauth.redsift.io'; // FIXXME: how to distinguish between staging and production?
+
 var ConnectedFirstUse = function (_React$Component) {
   inherits(ConnectedFirstUse, _React$Component);
 
@@ -20944,16 +20948,16 @@ var ConnectedFirstUse = function (_React$Component) {
                   label: 'Connect Twitter',
                   onConnected: this._onIdentityConnected,
                   providerId: 'twitter',
-                  oauthdKey: 'rPmv9yO50VpLRlTqrfMyRoZ7Pbo',
-                  oauthdUrl: 'https://oauth.io'
+                  oauthdKey: OAUTHD_KEY,
+                  oauthdUrl: OAUTHD_URL
                 }),
                 createElement(OAuthdIdentityCard, {
                   icon: '-rs-icon-angellist',
                   label: 'Connect AngelList',
                   onConnected: this._onIdentityConnected,
-                  providerId: 'twitter',
-                  oauthdKey: 'rPmv9yO50VpLRlTqrfMyRoZ7Pbo',
-                  oauthdUrl: 'https://oauth.io'
+                  providerId: 'angel_list',
+                  oauthdKey: OAUTHD_KEY,
+                  oauthdUrl: OAUTHD_URL
                 })
               )
             ),
@@ -21002,8 +21006,8 @@ var ConnectedFirstUse = function (_React$Component) {
                   identity: twitterIdentity,
                   onConnected: this._onIdentityConnected,
                   providerId: 'twitter',
-                  oauthdKey: 'rPmv9yO50VpLRlTqrfMyRoZ7Pbo',
-                  oauthdUrl: 'https://oauth.io'
+                  oauthdKey: OAUTHD_KEY,
+                  oauthdUrl: OAUTHD_URL
                 }),
                 createElement(OAuthdIdentityCard, {
                   icon: '-rs-icon-angellist',
@@ -21011,9 +21015,9 @@ var ConnectedFirstUse = function (_React$Component) {
                   description: 'Improve results by connecting to AngelList.',
                   identity: angellistIdentity,
                   onConnected: this._onIdentityConnected,
-                  providerId: 'twitter',
-                  oauthdKey: 'rPmv9yO50VpLRlTqrfMyRoZ7Pbo',
-                  oauthdUrl: 'https://oauth.io'
+                  providerId: 'angel_list',
+                  oauthdKey: OAUTHD_KEY,
+                  oauthdUrl: OAUTHD_URL
                 })
               )
             ),
@@ -21150,8 +21154,8 @@ var ConnectedFirstUse = function (_React$Component) {
                 label: 'Connect Slack',
                 onConnected: this._onIdentityConnected,
                 providerId: 'slack',
-                oauthdKey: 'rPmv9yO50VpLRlTqrfMyRoZ7Pbo',
-                oauthdUrl: 'https://oauth.io'
+                oauthdKey: OAUTHD_KEY,
+                oauthdUrl: OAUTHD_URL
               })
             ),
             createElement(

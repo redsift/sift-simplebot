@@ -5,6 +5,9 @@ import OAuthdIdentityCard from './OAuthdIdentityCard';
 
 // import './styles/index.styl';
 
+const OAUTHD_KEY = 'Qa7zbCXfaIjd8eJ1oAKY6nG3SEQ';
+const OAUTHD_URL = 'https://oauth.redsift.io'; // FIXXME: how to distinguish between staging and production?
+
 export default class ConnectedFirstUse extends React.Component {
   constructor(props) {
     super(props);
@@ -66,17 +69,17 @@ export default class ConnectedFirstUse extends React.Component {
                 label="Connect Twitter"
                 onConnected={this._onIdentityConnected}
                 providerId="twitter"
-                oauthdKey="rPmv9yO50VpLRlTqrfMyRoZ7Pbo"
-                oauthdUrl="https://oauth.io"
+                oauthdKey={OAUTHD_KEY}
+                oauthdUrl={OAUTHD_URL}
               />
 
               <OAuthdIdentityCard
                 icon="-rs-icon-angellist"
                 label="Connect AngelList"
                 onConnected={this._onIdentityConnected}
-                providerId="twitter"
-                oauthdKey="rPmv9yO50VpLRlTqrfMyRoZ7Pbo"
-                oauthdUrl="https://oauth.io"
+                providerId="angel_list"
+                oauthdKey={OAUTHD_KEY}
+                oauthdUrl={OAUTHD_URL}
               />
             </div>
 
@@ -108,8 +111,8 @@ export default class ConnectedFirstUse extends React.Component {
                   identity={twitterIdentity}
                   onConnected={this._onIdentityConnected}
                   providerId="twitter"
-                  oauthdKey="rPmv9yO50VpLRlTqrfMyRoZ7Pbo"
-                  oauthdUrl="https://oauth.io"
+                  oauthdKey={OAUTHD_KEY}
+                  oauthdUrl={OAUTHD_URL}
                 />
 
                 <OAuthdIdentityCard
@@ -118,9 +121,9 @@ export default class ConnectedFirstUse extends React.Component {
                   description="Improve results by connecting to AngelList."
                   identity={angellistIdentity}
                   onConnected={this._onIdentityConnected}
-                  providerId="twitter"
-                  oauthdKey="rPmv9yO50VpLRlTqrfMyRoZ7Pbo"
-                  oauthdUrl="https://oauth.io"
+                  providerId="angel_list"
+                  oauthdKey={OAUTHD_KEY}
+                  oauthdUrl={OAUTHD_URL}
                 />
               </div>
 
@@ -208,8 +211,8 @@ export default class ConnectedFirstUse extends React.Component {
                 label="Connect Slack"
                 onConnected={this._onIdentityConnected}
                 providerId="slack"
-                oauthdKey="rPmv9yO50VpLRlTqrfMyRoZ7Pbo"
-                oauthdUrl="https://oauth.io"
+                oauthdKey={OAUTHD_KEY}
+                oauthdUrl={OAUTHD_URL}
               />
             </div>
 

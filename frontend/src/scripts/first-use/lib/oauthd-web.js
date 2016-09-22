@@ -14,8 +14,9 @@ export default class OAuthdWeb {
     return new Promise((resolve, reject) => {
       OAuth.popup(provider, { state }).done((service) => {
         // console.log('[OAuthdWeb::popup]: success: ', service);
+
         const token = {
-          access_token: service.access_token,
+          access_token: service.access_token, // FIXXME
           oauth_token: service.oauth_token,
           oauth_token_secret: service.oauth_token_secret
         };
@@ -31,7 +32,7 @@ export default class OAuthdWeb {
           reject(e);
         });
       }).fail(function (e) {
-        console.error('[OAuthdWeb::popup]: popup failed: ', provider);
+        console.error('[OAuthdWeb::popup]: popup failed: ', provider, e);
         reject(e);
       });
     });

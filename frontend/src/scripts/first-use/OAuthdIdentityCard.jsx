@@ -6,7 +6,7 @@ export default class OAuthdIdentityCard extends React.Component {
     super(props);
 
     this._oauthdWeb = null;
-    
+
     if (props.oauthdKey && props.oauthdUrl) {
       this._oauthdWeb = new OAuthdWeb({ key: props.oauthdKey, url: props.oauthdUrl });
     }
