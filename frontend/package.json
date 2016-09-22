@@ -3,23 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "gulp build",
-    "build:bla": "gulpnpm run build:es && npm run build:umd-dev && npm run build:umd-prod && npm run build:css",
-    "build:es": "npm run makepkg && node_modules/.bin/rollup -c config/bundle/es.js",
+    "build": "npm run build:umd-dev && npm run build:umd-prod",
     "build:umd-dev": "npm run makepkg && node_modules/.bin/rollup -c config/bundle/umd-dev.js",
     "build:umd-prod": "npm run makepkg && node_modules/.bin/rollup -c config/bundle/umd-prod.js",
-    "build:css": "gulp",
     "makepkg": "node_modules/.bin/json2module package.json > package.js",
-    "clean": "rm -rf dist && rm package.js",
-    "version": "npm run build && git add -A .",
-    "postversion": "git push --tags origin HEAD",
-    "start": "node server.js",
-    "lint": "./node_modules/.bin/eslint index.js ./src/* ./examples/*",
-    "pretest": "npm outdated",
-    "test": "./node_modules/.bin/babel-tape-runner 'test/**/*-test.js' | ./node_modules/.bin/faucet && npm run lint"
+    "pretest": "npm outdated"
   },
   "dependencies": {
-    "@redsift/rs-component-wizard": "^0.1.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },

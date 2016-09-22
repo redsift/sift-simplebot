@@ -12,4 +12,5 @@ gulp.task('bundle-css', RSBundler.loadTask(gulp, 'bundle-css', bundles('css')));
 
 gulp.task('default', ['bundle-js', 'bundle-css'], function() {
   console.log('Bundling complete');
+  console.log('CAUTION: You have to run "npm run build" to build the "first-use" wizard!');
 });

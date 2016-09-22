@@ -6,14 +6,13 @@
     <title>First Use</title>
     <link rel="stylesheet" href="dist/css/style.css">
     <link rel="stylesheet" href="dist/css/first-use.css">
-    <!-- <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script> -->
-    <!-- <script src="dist/js/react.js"></script>
-    <script src="dist/js/react-dom.js"></script> -->
   </head>
   <body>
     <div id="content"></div>
+    <!-- OAuthIO has to be included like so, as bundling the library does not work yet with Rollup. This leads
+         to some errors in the linter regarding "'OAuth' is not defined", which can be ignored. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/oauth-io/0.5.2/oauth.js"></script>
-    <script src="dist/js/first-use.juhuu.js"></script>
+    <script src="dist/js/first-use.umd-es2015.js"></script>
+    <!-- <script src="dist/js/first-use.umd-es2015.min.js"></script> -->
   </body>
 </html>

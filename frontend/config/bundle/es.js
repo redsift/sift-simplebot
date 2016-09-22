@@ -47,6 +47,7 @@ export default {
             "import React from 'react'": "import * as React from 'react'"
         }),
         cjs({
+            // NOTE: config taken from here: https://github.com/rollup/rollup/issues/502
             namedExports: {
                 'node_modules/react/react.js': ['Component', 'Children', 'createElement', 'PropTypes'],
                 'node_modules/react-dom/index.js': ['render']
