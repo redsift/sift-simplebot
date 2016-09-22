@@ -48,7 +48,7 @@ class ConnectedFirstUse extends React.Component {
 
             { isMicro ? (
               <div className="page__content">
-                <p>Attach social account to run <strong>Connected</strong> Sift</p>
+                <p>Attach social accounts to run <strong>Connected</strong> Sift</p>
               </div>
             ) : (
               <div className="page__content">
