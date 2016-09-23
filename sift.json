@@ -4,8 +4,6 @@
   "description": "",
   "author": "",
   "version": "1.0.0",
-  "color": "#ED1651",
-  "image": "https://static.redsift.io/assets/sifts/template/template.jpg",
   "icon": "https://static.redsift.io/assets/sifts/template/blueprint.svg",
   "interfaces": {
     "email": {
