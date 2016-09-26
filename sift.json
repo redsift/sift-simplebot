@@ -61,13 +61,13 @@
                 "date": "between now and 1 month before now"
               }
             ],
-            "wants": [
-              "archive",
-              "textBody",
-              "strippedHtmlBody"
-            ],
             "operator": "AND"
-          }
+          },
+          "wants": [
+            "archive",
+            "textBody",
+            "strippedHtmlBody"
+          ]
         }
       }
     },
