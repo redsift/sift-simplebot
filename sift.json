@@ -43,6 +43,15 @@
             ],
             "operator": "AND"
           }
+        },
+        "actions": {
+          "filter": {
+            "conditions": [
+              {
+                "actions": {}
+              }
+            ]
+          }
         }
       },
       "emails": {
@@ -79,6 +88,18 @@
         },
         "input": {
           "bucket": "all"
+        },
+        "outputs": {
+          "messages": {}
+        }
+      },
+      {
+        "#": "Slack bot actions",
+        "implementation": {
+          "javascript": "server/slack-actions.js"
+        },
+        "input": {
+          "bucket": "actions"
         },
         "outputs": {
           "messages": {}
