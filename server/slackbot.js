@@ -11,6 +11,7 @@ module.exports = function (got) {
   /* jshint camelcase: false */
   /* jshint -W069 */
   console.log('slackbot.js:... got', JSON.stringify(got));
+  console.log('slackbot.js:... process.env._SLACK_BOT_TOKEN=', process.env._SLACK_BOT_TOKEN);
   const inData = got['in'];
 
   //console.log('MAP: inData...', inData);
