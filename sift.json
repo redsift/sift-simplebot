@@ -44,7 +44,7 @@
             "operator": "AND"
           }
         },
-        "actions": {
+        "actions1": {
           "filter": {
             "conditions": [
               {
@@ -99,7 +99,7 @@
           "javascript": "server/slack-actions.js"
         },
         "input": {
-          "bucket": "actions"
+          "bucket": "actions1"
         },
         "outputs": {
           "messages": {}

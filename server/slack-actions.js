@@ -19,7 +19,7 @@ module.exports = function (got) {
       try {
         var msg = JSON.parse(d.value);
         console.log('slack-actions.js: msg: ', msg);
-        promises.push(slack.postMessage('#'+msg.channel.id, 'Hello from Actions Bot'));
+        promises.push(slack.postMessage('#'+msg.channel.id, 'Hello from Actions Bot - Updated'));
       } catch (err) {
 
       }
