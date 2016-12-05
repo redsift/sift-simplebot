@@ -11,6 +11,12 @@ module.exports = function (got) {
   /* jshint camelcase: false */
   /* jshint -W069 */
   console.log('slackbot.js:... got', JSON.stringify(got));
+
+  got.lookup.forEach(function (lookup) {
+    if (lookup.data && lookup.data.value) {
+      process.env._SLACK_BOT_TOKEN = lookup.data.value.toString();
+    }
+  });
   console.log('slackbot.js:... process.env._SLACK_BOT_TOKEN=', process.env._SLACK_BOT_TOKEN);
   const inData = got['in'];
 
@@ -35,7 +41,7 @@ module.exports = function (got) {
         // remove <@..> direct mention
         msg.text = msg.text.replace(/(^<@.*>:\s+)/i, '');
 
-        promises.push(slack.postMessage(msg.channel, 'Hello from Simple Bot'));
+        promises.push(slack.postMessage(msg.channel, 'Hello from Simple Bot. Stay cool.'));
       } catch (ex) {
         console.error('slackbot.js: Error parsing value for: ', d.key);
         console.error('slackbot.js: Exception: ', ex);

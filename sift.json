@@ -87,7 +87,11 @@
           "javascript": "server/slackbot.js"
         },
         "input": {
-          "bucket": "all"
+          "bucket": "all",
+          "lookup": [{
+            "bucket": "server",
+            "key": "slack/bot_access_token"
+          }]
         },
         "outputs": {
           "messages": {}
@@ -135,6 +139,9 @@
     "stores": {
       "messages": {
         "key$schema": "string"
+      },
+      "server": {
+        "import": "_server"
       }
     },
     "outputs": {
