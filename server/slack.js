@@ -2,10 +2,8 @@
 
 var rp = require('request-promise');
 
-function postMessage(channel, text, attachments) {
+function postMessage(channel, text, attachments, botToken) {
   return new Promise(function (resolve, reject) {
-    var botToken = process.env._SLACK_BOT_TOKEN;
-
     // sanitise channel
     channel = channel.replace(/(^<@)/, '');
     channel = channel.replace(/(^@)/, '');
