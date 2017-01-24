@@ -10,20 +10,16 @@ var slack = require('./slack.js');
 module.exports = function (got) {
   /* jshint camelcase: false */
   /* jshint -W069 */
-  console.log('slackbot.js:... got', JSON.stringify(got));
+  const inData = got['in'];
 
+  var promises = [];
   var botToken;
+
   got.lookup.forEach(function (lookup) {
     if (lookup.bucket === 'server' && lookup.data && lookup.data.key === 'slack/bot_access_token' && lookup.data.value) {
       botToken = lookup.data.value.toString();
     }
   });
-
-  const inData = got['in'];
-
-  //console.log('MAP: inData...', inData);
-
-  var promises = [];
 
   for (var d of inData.data) {
     console.log('slackbot.js: data: ', d);
@@ -36,13 +32,12 @@ module.exports = function (got) {
 
         console.log('slackbot.js: msg: ', msg);
 
-        // TODO: Hash session_id and lookup
         var session_id = msg.channel + '-' + msg.user + '-' + Date.now();
 
         // remove <@..> direct mention
         msg.text = msg.text.replace(/(^<@.*>:\s+)/i, '');
 
-        promises.push(slack.postMessage(msg.channel, 'Hello from Simple Bot. Stay cool.', null, botToken));
+        promises.push(slack.postMessage(msg.channel, 'Hello from sift-simplebot Bot', null, botToken));
       } catch (ex) {
         console.error('slackbot.js: Error parsing value for: ', d.key);
         console.error('slackbot.js: Exception: ', ex);

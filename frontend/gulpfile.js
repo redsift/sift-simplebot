@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp');
-var path = require('path');
 var RSBundler = require('@redsift/redsift-bundler');
 
 // The definitions for this Sift's bundles

@@ -1,21 +1,13 @@
 {
   "name": "sift-simplebot",
-  "display-name": "Sift Simplebot",
+  "display-name": "Simplebot Sift",
   "description": "",
   "author": "",
   "version": "1.0.0",
-  "icon": "https://static.redsift.io/assets/sifts/template/blueprint.svg",
+  "icon": "assets/blueprint.svg",
   "interfaces": {
-    "email": {
-      "thread": {
-        "controller": "dist/js/controller.umd-es2015.js"
-      },
-      "client": {
-        "controller": "dist/js/email-client-controller.umd-es2015.js"
-      }
-    },
     "summary": {
-      "controller": "dist/js/controller.umd-es2015.js"
+      "controller": "dist/js/controller.umd-es2015.min.js"
     }
   },
   "dag": {
@@ -44,7 +36,7 @@
             "operator": "AND"
           }
         },
-        "actions1": {
+        "actions": {
           "filter": {
             "conditions": [
               {
@@ -52,31 +44,6 @@
               }
             ]
           }
-        }
-      },
-      "emails": {
-        "gmailEmails": {
-          "filter": {
-            "conditions": [
-              {
-                "from": {
-                  "regexp": {
-                    "pattern": ".*@gmail\\.com",
-                    "flags": "i"
-                  }
-                }
-              },
-              {
-                "date": "between now and 1 month before now"
-              }
-            ],
-            "operator": "AND"
-          },
-          "wants": [
-            "archive",
-            "textBody",
-            "strippedHtmlBody"
-          ]
         }
       }
     },
@@ -103,56 +70,21 @@
           "javascript": "server/slack-actions.js"
         },
         "input": {
-          "bucket": "actions1"
+          "bucket": "actions"
         },
         "outputs": {
           "messages": {}
         }
-      },
-      {
-        "#": "Parse",
-        "implementation": {
-          "javascript": "server/parse.js"
-        },
-        "input": {
-          "bucket": "gmailEmails"
-        },
-        "outputs": {
-          "messages": {},
-          "threads": {}
-        }
-      },
-      {
-        "#": "Count",
-        "implementation": {
-          "javascript": "server/count.js"
-        },
-        "input": {
-          "bucket": "messages",
-          "select": "*"
-        },
-        "outputs": {
-          "count": {}
-        }
       }
     ],
     "stores": {
-      "messages": {
+     "messages": {
         "key$schema": "string"
       },
       "server": {
         "import": "_server"
       }
     },
-    "outputs": {
-      "exports": {
-        "count": {
-          "key$schema": "string"
-        },
-        "threads": {
-          "import": "_email.tid"
-        }
-      }
-    }
+    "outputs": {}
   }
 }

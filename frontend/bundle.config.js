@@ -1,18 +1,12 @@
 /**
  * Main scripts for the Sift to be bundled
  */
+'use strict';
+
 var mainJS = [
-  {
-    name: 'view', // prefix for output file
-    indexFile: './src/scripts/view.js' // the index file
-  },
   {
     name: 'controller',
     indexFile: './src/scripts/controller.js'
-  },
-  {
-    name: 'email-client-controller',
-    indexFile: './src/scripts/email-client-controller.js'
   }
 ];
 
@@ -22,7 +16,7 @@ var mainJS = [
 var styles = [
   {
     name: 'style',
-    indexFile: './src/styles/style.css'
+    indexFile: './src/styles/style.styl'
   }
 ];
 
@@ -30,7 +24,7 @@ var styles = [
  * Default configurations
  */
 var defaults = {
-  formats: ['es', 'umd'],
+  formats: ['umd'],
   outputFolder: './public/dist',
   moduleNameJS: 'Sift',
   mapsDest: '.',
