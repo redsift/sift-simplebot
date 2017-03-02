@@ -51,13 +51,17 @@
       {
         "#": "Slack bot",
         "implementation": {
-          "javascript": "server/slackbot.js"
+          "javascript": "server/slack-bot.js"
         },
         "input": {
           "bucket": "all",
           "lookup": [{
             "bucket": "server",
             "key": "slack/bot_access_token"
+          },
+          {
+            "bucket": "server",
+            "key": "account/uuid"
           }]
         },
         "outputs": {
@@ -75,6 +79,23 @@
         "outputs": {
           "messages": {}
         }
+      },
+      {
+        "#": "Slack bot welcome message",
+        "implementation": {
+          "javascript": "server/slack-welcome.js"
+        },
+        "input": {
+          "bucket": "server",
+          "select": "slack/*",
+          "lookup": [{
+            "bucket": "server",
+            "key": "account/uuid"
+          }]
+        },
+        "outputs": {
+          "messages": {}
+        }
       }
     ],
     "stores": {
@@ -85,6 +106,7 @@
         "import": "_server"
       }
     },
-    "outputs": {}
+    "outputs": {
+    }
   }
 }

@@ -2,7 +2,7 @@
 
 var rp = require('request-promise');
 
-function postMessage(channel, text, attachments, botToken) {
+function postMessage(channel, text, attachments, botToken, asUser) {
   return new Promise(function (resolve, reject) {
     // sanitise channel
     channel = channel.replace(/(^<@)/, '');
@@ -17,7 +17,8 @@ function postMessage(channel, text, attachments, botToken) {
       uri: 'https://slack.com/api/chat.postMessage',
       qs: {
         token: botToken,
-        channel: channel
+        channel: channel,
+        'as_user': asUser === true ? true : false
       },
       json: true // Automatically parses the JSON string in the response
     };
