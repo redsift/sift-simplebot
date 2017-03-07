@@ -49,6 +49,10 @@ module.exports = function (got) {
     }
   }
 
+  if (!userId) {
+    return;
+  }
+
   promises.push(slack.postMessage(userId, 'Welcome my friend, welcome to the machine. Regards - sift-simplebot Bot. Your email is ' + accountEmail + ' and account is ' + accountUuid, null, botToken, true));
 
   return promises;
