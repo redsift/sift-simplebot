@@ -15,12 +15,15 @@ module.exports = function (got) {
   var promises = [];
   var botToken;
   var accountUuid;
+  var accountEmail;
 
   got.lookup.forEach(function (lookup) {
     if (lookup.bucket === 'server' && lookup.data && lookup.data.key === 'slack/bot_access_token' && lookup.data.value) {
       botToken = lookup.data.value.toString();
     } else if (lookup.bucket === 'server' && lookup.data && lookup.data.key === 'account/uuid' && lookup.data.value) {
       accountUuid = lookup.data.value.toString();
+    } else if (lookup.bucket === 'server' && lookup.data && lookup.data.key === 'account/email' && lookup.data.value) {
+      accountEmail = lookup.data.value.toString();
     }
   });
 
@@ -42,7 +45,7 @@ module.exports = function (got) {
         // remove <@..> direct mention
         msg.text = msg.text.replace(/(^<@.*>:\s+)/i, '');
 
-        promises.push(slack.postMessage(msg.channel, 'Hello ' + accountUuid + ' . Regards - sift-simplebot Bot', null, botToken));
+        promises.push(slack.postMessage(msg.channel, 'Hello. Your email is ' + accountEmail + ', account is ' + accountUuid + '. Regards - sift-simplebot Bot', null, botToken));
       } catch (ex) {
         console.error('slackbot.js: Error parsing value for: ', d.key);
         console.error('slackbot.js: Exception: ', ex);

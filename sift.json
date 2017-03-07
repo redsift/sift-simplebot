@@ -62,6 +62,10 @@
           {
             "bucket": "server",
             "key": "account/uuid"
+          },
+          {
+            "bucket": "server",
+            "key": "account/email"
           }]
         },
         "outputs": {
@@ -91,6 +95,10 @@
           "lookup": [{
             "bucket": "server",
             "key": "account/uuid"
+          },
+          {
+            "bucket": "server",
+            "key": "account/email"
           }]
         },
         "outputs": {

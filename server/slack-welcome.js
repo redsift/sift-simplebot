@@ -14,12 +14,15 @@ module.exports = function (got) {
 
   var promises = [];
   var accountUuid;
+  var accountEmail;
   var botToken;
   var userId;
 
   got.lookup.forEach(function (lookup) {
     if (lookup.bucket === 'server' && lookup.data && lookup.data.key === 'account/uuid' && lookup.data.value) {
       accountUuid = lookup.data.value.toString();
+    } else if (lookup.bucket === 'server' && lookup.data && lookup.data.key === 'account/email' && lookup.data.value) {
+      accountEmail = lookup.data.value.toString();
     }
   });
 
@@ -46,7 +49,7 @@ module.exports = function (got) {
     }
   }
 
-  promises.push(slack.postMessage(userId, 'Welcome my friend, welcome to the machine. Regards - sift-simplebot Bot', null, botToken, true));
+  promises.push(slack.postMessage(userId, 'Welcome my friend, welcome to the machine. Regards - sift-simplebot Bot. Your email is ' + accountEmail + ' and account is ' + accountUuid, null, botToken, true));
 
   return promises;
 };
