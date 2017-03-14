@@ -12,6 +12,16 @@ module.exports = function (got) {
   /* jshint -W069 */
   console.log('slack-actions.js:... got', JSON.stringify(got));
   var inData = got['in'];
+
+  var botToken;
+
+  got.lookup.forEach(function (lookup) {
+    if (lookup.bucket === 'server' && lookup.data && lookup.data.key === 'slack/bot_access_token' && lookup.data.value) {
+      botToken = lookup.data.value.toString();
+    }
+  });
+
+console.log('botToken = ', botToken);
   var promises = [];
   for (var d of inData.data) {
     console.log('slackbot.js: data: ', d);
@@ -19,7 +29,7 @@ module.exports = function (got) {
       try {
         var msg = JSON.parse(d.value);
         console.log('slack-actions.js: msg: ', msg);
-        promises.push(slack.postMessage('#'+msg.channel.id, 'Hello from sift-simplebot Actions Bot'));
+        promises.push(slack.postMessage('#'+msg.channel.id, 'Hello from sift-simplebot Actions Bot', null, botToken));
       } catch (err) {
 
       }

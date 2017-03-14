@@ -78,7 +78,11 @@
           "javascript": "server/slack-actions.js"
         },
         "input": {
-          "bucket": "actions"
+          "bucket": "actions",
+          "lookup": [{
+            "bucket": "server",
+            "key": "slack/bot_access_token"
+          }]
         },
         "outputs": {
           "messages": {}
